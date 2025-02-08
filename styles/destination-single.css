@@ -390,6 +390,20 @@
     .experiences-grid {
         grid-template-columns: 1fr;
     }
+
+    .region-cards {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .region-card {
+        min-width: 200px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -778,5 +792,25 @@
 
     .attraction-image {
         height: 300px;
+    }
+}
+
+.regions-section {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .region-cards {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .region-card {
+        min-width: 200px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
     }
 } 

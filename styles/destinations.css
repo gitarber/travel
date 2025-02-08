@@ -210,4 +210,44 @@
     .destination-image {
         height: 200px;
     }
+}
+
+/* Regions Section */
+.regions-section {
+    background: white;
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+.region-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.region-card {
+    background: var(--secondary-color);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .regions-section {
+        position: static; /* This ensures it scrolls normally */
+        padding: 20px 0;
+        margin-bottom: 20px;
+    }
+
+    .region-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .region-card {
+        padding: 15px;
+    }
 } 
