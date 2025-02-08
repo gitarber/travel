@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - Visit Albania</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/destinations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header (same as main page) -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo.svg" alt="Albania Visit Logo">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="destinations.html" class="active">Destinations</a></li>
+                    <li><a href="index.html#landmarks">Landmarks</a></li>
+                    <li><a href="index.html#experiences">Experiences</a></li>
+                    <li><a href="index.html#advisor">Advisor</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Destinations Hero -->
+    <section class="destinations-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Explore Albania's Regions</h1>
+                <p>Discover the diverse landscapes and rich cultural heritage of Albania's three distinct regions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Region Navigation -->
+    <section class="region-nav">
+        <div class="container">
+            <div class="region-tabs">
+                <button class="region-tab active" data-region="northern">Northern Region</button>
+                <button class="region-tab" data-region="central">Central Region</button>
+                <button class="region-tab" data-region="southern">Southern Region</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Region Content -->
+    <section class="region-content">
+        <div class="container">
+            <!-- Northern Region -->
+            <div class="region-section active" id="northern">
+                <div class="region-intro">
+                    <h2>Northern Albania</h2>
+                    <p>Experience dramatic mountain landscapes, traditional villages, and pristine alpine lakes in Albania's rugged north.</p>
+                </div>
+
+                <div class="destinations-grid">
+                    <!-- Theth -->
+                    <article class="destination-card">
+                        <div class="destination-image">
+                            <img src="assets/images/destinations/theth/main.jpg" alt="Theth National Park">
+                            <div class="destination-type">Mountain Village</div>
+                        </div>
+                        <div class="destination-content">
+                            <h3>Theth</h3>
+                            <div class="destination-meta">
+                                <span><i class="fas fa-mountain"></i> National Park</span>
+                                <span><i class="fas fa-hiking"></i> Hiking</span>
+                            </div>
+                            <p>A picturesque mountain village surrounded by the Albanian Alps, offering spectacular hiking trails and cultural experiences.</p>
+                            <ul class="destination-highlights">
+                                <li>Theth Waterfall</li>
+                                <li>Blue Eye of Theth</li>
+                                <li>Lock-in Tower</li>
+                                <li>Valbona Pass</li>
+                            </ul>
+                            <a href="destinations/theth.html" class="destination-link">Explore Theth <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Valbona -->
+                    <article class="destination-card">
+                        <div class="destination-image">
+                            <img src="assets/images/destinations/valbona/main.jpg" alt="Valbona Valley">
+                            <div class="destination-type">National Park</div>
+                        </div>
+                        <div class="destination-content">
+                            <h3>Valbona Valley</h3>
+                            <div class="destination-meta">
+                                <span><i class="fas fa-mountain"></i> Alpine Valley</span>
+                                <span><i class="fas fa-campground"></i> Adventure</span>
+                            </div>
+                            <p>A stunning alpine valley in the heart of the Albanian Alps, perfect for hiking, climbing, and nature exploration.</p>
+                            <ul class="destination-highlights">
+                                <li>Valbona Peak</li>
+                                <li>Traditional Villages</li>
+                                <li>Mountain Springs</li>
+                                <li>Alpine Meadows</li>
+                            </ul>
+                            <a href="destinations/valbona.html" class="destination-link">Explore Valbona <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Shkodër -->
+                    <article class="destination-card">
+                        <div class="destination-image">
+                            <img src="assets/images/destinations/shkoder/main.jpg" alt="Shkodër City">
+                            <div class="destination-type">Historic City</div>
+                        </div>
+                        <div class="destination-content">
+                            <h3>Shkodër</h3>
+                            <div class="destination-meta">
+                                <span><i class="fas fa-monument"></i> Cultural Hub</span>
+                                <span><i class="fas fa-water"></i> Lake Views</span>
+                            </div>
+                            <p>Albania's cultural capital, featuring the impressive Rozafa Castle and the beautiful Lake Shkodra.</p>
+                            <ul class="destination-highlights">
+                                <li>Rozafa Castle</li>
+                                <li>Lake Shkodra</li>
+                                <li>Marubi Museum</li>
+                                <li>Old Town</li>
+                            </ul>
+                            <a href="destinations/shkoder.html" class="destination-link">Explore Shkodër <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Lezhë -->
+                    <article class="destination-card">
+                        <div class="destination-image">
+                            <img src="assets/images/destinations/lezhe.jpg" alt="Lezhë Castle">
+                            <div class="destination-type">Historical Site</div>
+                        </div>
+                        <div class="destination-content">
+                            <h3>Lezhë</h3>
+                            <div class="destination-meta">
+                                <span><i class="fas fa-castle"></i> Castle</span>
+                                <span><i class="fas fa-landmark"></i> Mausoleum</span>
+                            </div>
+                            <p>Home to the Skanderbeg Mausoleum and ancient castle, showcasing Albania's rich history.</p>
+                            <ul class="destination-highlights">
+                                <li>Lezhë Castle</li>
+                                <li>Skanderbeg Mausoleum</li>
+                                <li>Ancient Ruins</li>
+                                <li>Local Cuisine</li>
+                            </ul>
+                            <a href="destinations/lezhe.html" class="destination-link">Explore Lezhë <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Central Region -->
+            <div class="region-section" id="central">
+                <div class="region-intro">
+                    <h2>Central Albania</h2>
+                    <p>Discover the heart of Albania with its vibrant capital, ancient amphitheaters, and cultural heritage.</p>
+                </div>
+
+                <div class="destinations-grid">
+                    <!-- Tirana -->
+                    <article class="destination-card">
+                        <div class="destination-image">
+                            <img src="assets/images/destinations/tirana.jpg" alt="Tirana City Center">
+                            <div class="destination-type">Capital City</div>
+                        </div>
+                        <div class="destination-content">
+                            <h3>Tirana</h3>
+                            <div class="destination-meta">
+                                <span><i class="fas fa-city"></i> Capital</span>
+                                <span><i class="fas fa-mountain"></i> Dajti Mountain</span>
+                            </div>
+                            <p>Albania's vibrant capital, blending modern culture with historical landmarks.</p>
+                            <ul class="destination-highlights">
+                                <li>Skanderbeg Square</li>
+                                <li>National History Museum</li>
+                                <li>Bunk'Art Museum</li>
+                                <li>Dajti Mountain Cable Car</li>
+                            </ul>
+                            <a href="destinations/tirana.html" class="destination-link">Explore Tirana <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Durrës -->
+                    <article class="destination-card">
+                        <div class="destination-image">
+                            <img src="assets/images/destinations/durres.jpg" alt="Durrës Amphitheatre">
+                            <div class="destination-type">Coastal City</div>
+                        </div>
+                        <div class="destination-content">
+                            <h3>Durrës</h3>
+                            <div class="destination-meta">
+                                <span><i class="fas fa-umbrella-beach"></i> Beach</span>
+                                <span><i class="fas fa-landmark"></i> Roman Ruins</span>
+                            </div>
+                            <p>Ancient port city featuring Roman ruins and beautiful Adriatic beaches.</p>
+                            <ul class="destination-highlights">
+                                <li>Roman Amphitheatre</li>
+                                <li>Archaeological Museum</li>
+                                <li>Durrës Beach</li>
+                                <li>Venice Tower</li>
+                            </ul>
+                            <a href="destinations/durres.html" class="destination-link">Explore Durrës <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Southern Region -->
+            <div class="region-section" id="southern">
+                <div class="region-intro">
+                    <h2>Southern Albania</h2>
+                    <p>Discover ancient ruins, pristine beaches, and traditional villages in Albania's enchanting south.</p>
+                </div>
+
+                <div class="destinations-grid">
+                    <!-- Gjirokastër Card -->
+                    <article class="destination-card">
+                        <div class="destination-image">
+                            <img src="assets/images/destinations/gjirokaster/main.jpg" alt="Gjirokastër Castle">
+                            <div class="destination-type">UNESCO Heritage</div>
+                        </div>
+                        <div class="destination-content">
+                            <h3>Gjirokastër</h3>
+                            <div class="destination-meta">
+                                <span><i class="fas fa-landmark"></i> Historic City</span>
+                                <span><i class="fas fa-mountain"></i> Mountain Views</span>
+                            </div>
+                            <p>Known as the "City of Stone," featuring remarkable Ottoman architecture and an imposing castle.</p>
+                            <ul class="destination-highlights">
+                                <li>Gjirokastër Castle</li>
+                                <li>Old Bazaar</li>
+                                <li>Ottoman Houses</li>
+                                <li>Ethnographic Museum</li>
+                            </ul>
+                            <a href="destinations/gjirokaster.html" class="destination-link">Explore Gjirokastër <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Berat -->
+                    <article class="destination-card">
+                        <div class="destination-image">
+                            <img src="assets/images/destinations/berat.jpg" alt="Berat Old Town">
+                            <div class="destination-type">UNESCO Site</div>
+                        </div>
+                        <div class="destination-content">
+                            <h3>Berat</h3>
+                            <div class="destination-meta">
+                                <span><i class="fas fa-monument"></i> UNESCO Heritage</span>
+                                <span><i class="fas fa-church"></i> Historic Churches</span>
+                            </div>
+                            <p>The "City of a Thousand Windows" with its unique Ottoman architecture.</p>
+                            <ul class="destination-highlights">
+                                <li>Berat Castle</li>
+                                <li>Mangalem Quarter</li>
+                                <li>Onufri Museum</li>
+                                <li>Traditional Houses</li>
+                            </ul>
+                            <a href="destinations/berat.html" class="destination-link">Explore Berat <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Sarandë -->
+                    <article class="destination-card">
+                        <div class="destination-image">
+                            <img src="assets/images/destinations/sarande.jpg" alt="Sarandë Coast">
+                            <div class="destination-type">Coastal Resort</div>
+                        </div>
+                        <div class="destination-content">
+                            <h3>Sarandë</h3>
+                            <div class="destination-meta">
+                                <span><i class="fas fa-umbrella-beach"></i> Beaches</span>
+                                <span><i class="fas fa-water"></i> Ionian Sea</span>
+                            </div>
+                            <p>Gateway to the Albanian Riviera with crystal-clear waters and ancient ruins.</p>
+                            <ul class="destination-highlights">
+                                <li>Butrint National Park</li>
+                                <li>Lëkurësi Castle</li>
+                                <li>Mirror Beach</li>
+                                <li>Blue Eye Spring</li>
+                            </ul>
+                            <a href="destinations/sarande.html" class="destination-link">Explore Sarandë <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map -->
+    <section class="region-map">
+        <div class="container">
+            <h2>Interactive Map</h2>
+            <div id="albania-map"></div>
+        </div>
+    </section>
+
+    <!-- Footer (same as main page) -->
+    <!-- ... Footer code ... -->
+
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/destinations.js"></script>
+</body>
+</html> 
