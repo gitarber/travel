@@ -1,7 +1,7 @@
 /* Destinations Hero Section */
 .destinations-hero {
     height: 60vh;
-    background-image: url('../assets/images/destinations/hero-bg.jpg');
+    background-image: url('../assets/images/destinations/hero.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -19,7 +19,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .destinations-hero .hero-content {
@@ -38,9 +38,7 @@
 
 .destinations-hero p {
     font-size: 1.2rem;
-    line-height: 1.6;
-    margin: 0 auto;
-    max-width: 600px;
+    margin-bottom: 2rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 

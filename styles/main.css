@@ -43,8 +43,25 @@ body {
     height: 80px;
 }
 
+/* Logo styling - Adjust size as needed */
 .logo img {
-    height: 40px;
+    /* Adjust width to make logo bigger/smaller */
+    width: 150px;
+    
+    /* Uncomment and modify height if you need specific height
+    height: 60px; */
+    
+    /* This maintains aspect ratio when only width is set */
+    height: auto;
+    
+    /* Uncomment if you want to add spacing around the logo
+    padding: 10px; */
+    
+    /* Uncomment if you need to adjust logo position
+    margin: 10px 0; */
+    
+    /* Uncomment if you need to adjust vertical alignment
+    vertical-align: middle; */
 }
 
 .nav-links {

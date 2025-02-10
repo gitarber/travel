@@ -74,7 +74,7 @@
                 <div class="info-item">
                     <i class="fas fa-star"></i>
                     <h3>Highlights</h3>
-                    <p>Alpine Peaks & Hiking</p>
+                    <p>Alpine  Hiking</p>
                 </div>
             </div>
         </div>
@@ -111,7 +111,57 @@
                             </div>
                         </article>
 
-                        <!-- Continue with other attractions... -->
+                        <!-- Valbona River -->
+                        <article class="attraction-card">
+                            <div class="attraction-image">
+                                <img src="../assets/images/destinations/valbona/river.jpg" alt="Valbona River">
+                                <span class="attraction-type">Natural Wonder</span>
+                            </div>
+                            <div class="attraction-content">
+                                <h3>Valbona River</h3>
+                                <p>Crystal-clear alpine river perfect for photography and riverside picnics.</p>
+                                <ul class="attraction-details">
+                                    <li><i class="fas fa-water"></i> Crystal Clear Waters</li>
+                                    <li><i class="fas fa-camera"></i> Photography Spots</li>
+                                    <li><i class="fas fa-temperature-low"></i> Refreshing Year-round</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <!-- Rrogam Village -->
+                        <article class="attraction-card">
+                            <div class="attraction-image">
+                                <img src="../assets/images/destinations/valbona/rrogam.jpg" alt="Rrogam Village">
+                                <span class="attraction-type">Traditional Village</span>
+                            </div>
+                            <div class="attraction-content">
+                                <h3>Rrogam Village</h3>
+                                <p>Remote mountain village offering authentic alpine lifestyle and traditional architecture.</p>
+                                <ul class="attraction-details">
+                                    <li><i class="fas fa-home"></i> Traditional Houses</li>
+                                    <li><i class="fas fa-utensils"></i> Local Cuisine</li>
+                                    <li><i class="fas fa-hiking"></i> Hiking Base</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <!-- Valbona Pass -->
+                        <article class="attraction-card">
+                            <div class="attraction-image">
+                                <img src="../assets/images/destinations/valbona/pass.jpg" alt="Valbona Pass">
+                                <span class="attraction-type">Mountain Pass</span>
+                                <span class="altitude-indicator">1,811m</span>
+                            </div>
+                            <div class="attraction-content">
+                                <h3>Valbona Pass</h3>
+                                <p>Spectacular mountain pass connecting Valbona with Theth, offering breathtaking views.</p>
+                                <ul class="attraction-details">
+                                    <li><i class="fas fa-hiking"></i> 6-8 hour trek</li>
+                                    <li><i class="fas fa-mountain"></i> Moderate-Hard</li>
+                                    <li><i class="fas fa-camera"></i> Panoramic Views</li>
+                                </ul>
+                            </div>
+                        </article>
                     </div>
 
                     <!-- Local Experiences -->
@@ -122,12 +172,16 @@
                             <i class="fas fa-mountain"></i>
                             <h3>Peak Climbing</h3>
                             <p>Scale the majestic peaks of Valbona with experienced mountain guides.</p>
-                            <span class="difficulty-indicator hard">Difficult</span>
+                            <div class="experience-footer">
+                                <span class="difficulty-badge">
+                                    <i class="fas fa-exclamation-circle"></i> Difficult
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Shepherds' Life -->
                         <div class="experience-card">
-                            <i class="fas fa-sheep"></i>
+                            <i class="fas fa-person-hiking"></i>
                             <h3>Shepherd Experience</h3>
                             <p>Join local shepherds and learn about traditional alpine farming.</p>
                         </div>
@@ -194,6 +248,20 @@
                                         <li>From Theth (6-8 hours)</li>
                                         <li>Spectacular views</li>
                                         <li>Well-marked paths</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Add this new transport card -->
+                            <div class="transport-card">
+                                <i class="fas fa-bus"></i>
+                                <h3>Shuttle Service</h3>
+                                <div class="transport-details">
+                                    <p>Daily minibus service from Tirana</p>
+                                    <ul>
+                                        <li><i class="fas fa-clock"></i> Duration: 5 hours</li>
+                                        <li><i class="fas fa-money-bill"></i> Cost: €25/person</li>
+                                        <li><i class="fas fa-calendar-alt"></i> Daily departures</li>
                                     </ul>
                                 </div>
                             </div>
@@ -273,6 +341,32 @@
                                     <li><i class="fas fa-fire"></i> Campfire Area</li>
                                 </ul>
                                 <div class="price">From €15/night</div>
+                                <a href="#" class="book-button">Check Availability</a>
+                            </div>
+                        </article>
+
+                        <!-- Add this new accommodation card -->
+                        <article class="accommodation-card">
+                            <div class="accommodation-image">
+                                <img src="../assets/images/destinations/valbona/villa-dini.jpg" alt="Villa Dini">
+                                <span class="accommodation-type">Mountain Lodge</span>
+                            </div>
+                            <div class="accommodation-content">
+                                <h3>Villa Dini</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>Luxury mountain lodge with panoramic valley views and traditional architecture</p>
+                                <ul class="amenities">
+                                    <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                                    <li><i class="fas fa-utensils"></i> Restaurant</li>
+                                    <li><i class="fas fa-mountain"></i> Mountain View</li>
+                                    <li><i class="fas fa-parking"></i> Free Parking</li>
+                                </ul>
+                                <div class="price">From €80/night</div>
                                 <a href="#" class="book-button">Check Availability</a>
                             </div>
                         </article>
@@ -455,8 +549,9 @@
 
     <!-- Scripts -->
     <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbrlcFOKXQxkny7jTyglMq8IQrkiNMnGo"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/destination-single.js"></script>
+    <script src="../assets/js/valbona-map.js"></script>
 </body>
 </html> 
