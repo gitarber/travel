@@ -32,6 +32,8 @@
     justify-content: center;
     text-align: center;
     color: var(--white);
+    margin-top: -80px;
+    padding-top: 80px;
 }
 
 .destination-hero .hero-overlay {
@@ -902,4 +904,25 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+/* Add padding to the body to prevent content from hiding behind fixed header */
+body {
+    padding-top: 80px; /* Adjust this value based on your header height */
+}
+
+/* Adjust hero section to account for fixed header */
+.destination-hero {
+    margin-top: -80px; /* Same as body padding-top */
+    padding-top: 80px; /* Same as body padding-top */
 } 

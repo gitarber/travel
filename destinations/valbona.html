@@ -8,8 +8,25 @@
     <link rel="stylesheet" href="../styles/destination-single.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/image-popup.css">
 </head>
 <body>
+    <!-- Add this right after the opening <body> tag -->
+    <div class="image-popup" id="imagePopup">
+        <span class="close-popup">&times;</span>
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3></h3>
+            </div>
+            <div class="popup-image-container">
+                <img src="" alt="" class="popup-image">
+                <button class="nav-btn prev-btn">&lt;</button>
+                <button class="nav-btn next-btn">&gt;</button>
+            </div>
+            <div class="popup-thumbnails"></div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -94,11 +111,39 @@
                     <h2>What to See</h2>
                     <div class="attractions-grid">
                         <!-- Valbona Peak -->
-                        <article class="attraction-card">
+                        <article class="attraction-card" data-gallery='[
+                            {
+                                "url": "../assets/images/destinations/valbona/peak.jpg",
+                                "caption": "Valbona Peak Main View"
+                            },
+                            {
+                                "url": "../assets/images/destinations/valbona/peak-2.jpg",
+                                "caption": "Trail to Valbona Peak"
+                            },
+                            {
+                                "url": "../assets/images/destinations/valbona/peak-3.jpg",
+                                "caption": "Summit View"
+                            },
+                            {
+                                "url": "../assets/images/destinations/valbona/peak-4.jpg",
+                                "caption": "Alpine Meadows near Peak"
+                            },
+                            {
+                                "url": "../assets/images/destinations/valbona/peak-5.jpg",
+                                "caption": "Alpine Meadows near Peak"
+                            },
+                            {
+                                "url": "../assets/images/destinations/valbona/peak-6.jpg",
+                                "caption": "Alpine Meadows near Peak"
+                            }
+                        ]'>
                             <div class="attraction-image">
                                 <img src="../assets/images/destinations/valbona/peak.jpg" alt="Valbona Peak">
                                 <span class="attraction-type">Mountain Peak</span>
                                 <span class="altitude-indicator">2,694m</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
                             </div>
                             <div class="attraction-content">
                                 <h3>Valbona Peak</h3>
@@ -553,5 +598,6 @@
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/destination-single.js"></script>
     <script src="../assets/js/valbona-map.js"></script>
+    <script src="../assets/js/image-popup.js"></script>
 </body>
 </html> 
