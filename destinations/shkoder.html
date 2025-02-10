@@ -447,35 +447,42 @@
                     <!-- Weather Widget -->
                     <div class="widget weather-widget">
                         <h3>Current Weather</h3>
-                        <div class="weather-content">
-                            <div class="weather-main">
-                                <i class="fas fa-sun"></i>
-                                <div class="temperature">22°C</div>
+                        <div class="weather-info">
+                            <div style="text-align: center;">
+                                <i class="fas fa-sun" style="color: #FFD700; font-size: 3rem;"></i>
+                                <span style="font-size: 3rem; color: #2B3B4E; margin-left: 10px;">18°C</span>
                             </div>
-                            <div class="weather-details">
-                                <span><i class="fas fa-tint"></i> Humidity: 65%</span>
-                                <span><i class="fas fa-wind"></i> Wind: 12 km/h</span>
+
+                            <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0;">
+                                <div>
+                                    <i class="fas fa-tint"></i> Humidity: 65%
+                                </div>
+                                <div>
+                                    <i class="fas fa-wind"></i> Wind: 15 km/h
+                                </div>
                             </div>
-                            <div class="weather-forecast">
-                                <div class="forecast-day">
-                                    <span>Mon</span>
+
+                            <div style="display: flex; justify-content: space-around; text-align: center; margin-top: 20px;">
+                                <div>
+                                    <div>Mon</div>
                                     <i class="fas fa-cloud-sun"></i>
-                                    <span>24°C</span>
+                                    <div>16°C</div>
                                 </div>
-                                <div class="forecast-day">
-                                    <span>Tue</span>
-                                    <i class="fas fa-sun"></i>
-                                    <span>26°C</span>
+                                <div>
+                                    <div>Tue</div>
+                                    <i class="fas fa-sun" style="color: #FFD700;"></i>
+                                    <div>19°C</div>
                                 </div>
-                                <div class="forecast-day">
-                                    <span>Wed</span>
+                                <div>
+                                    <div>Wed</div>
                                     <i class="fas fa-cloud"></i>
-                                    <span>23°C</span>
+                                    <div>15°C</div>
                                 </div>
                             </div>
-                            <div class="weather-alert">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Perfect weather for sightseeing and outdoor activities.</span>
+
+                            <div style="margin-top: 20px; padding: 10px; background-color: #fff3cd; color: #856404; border-radius: 4px; text-align: center;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                Check weather conditions before visiting.
                             </div>
                         </div>
                     </div>

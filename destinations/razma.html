@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razma - Mountain Paradise | Visit Albania</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/destination-single.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/image-popup.css">
+</head>
+<body>
+    <!-- Image Popup -->
+    <div class="image-popup" id="imagePopup">
+        <span class="close-popup">&times;</span>
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3></h3>
+            </div>
+            <div class="popup-image-container">
+                <img src="" alt="" class="popup-image">
+                <button class="nav-btn prev-btn">&lt;</button>
+                <button class="nav-btn next-btn">&gt;</button>
+            </div>
+            <div class="popup-thumbnails"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="/assets/images/logo.jpg" alt="Albania Visit Logo">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../destinations.html" class="active">Destinations</a></li>
+                    <li><a href="../index.html#landmarks">Landmarks</a></li>
+                    <li><a href="../index.html#experiences">Experiences</a></li>
+                    <li><a href="../index.html#advisor">Advisor</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../destinations.html">Destinations</a>
+                <span>/</span>
+                <span>Razma</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="destination-hero" style="background-image: url('../assets/images/destinations/razma/hero.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Razma</h1>
+                <p>Hidden Mountain Paradise</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info -->
+    <section class="quick-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Northern Albania</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Best Time to Visit</h3>
+                    <p>June to September</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Recommended Stay</h3>
+                    <p>2-3 Days</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-star"></i>
+                    <h3>Highlights</h3>
+                    <p>Nature & Hiking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="destination-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-content">
+                    <h2>About Razma</h2>
+                    <div class="content-block">
+                        <p>Razma is a picturesque mountain village nestled in the Albanian Alps, known for its pristine nature, traditional hospitality, and excellent hiking opportunities. Located at an altitude of approximately 900 meters, it offers breathtaking views of the surrounding mountains and valleys.</p>
+                        <p>The area is characterized by its rich biodiversity, pine forests, and traditional alpine architecture, making it a perfect destination for nature lovers and those seeking a peaceful mountain retreat.</p>
+                    </div>
+
+                    <h2>What to See</h2>
+                    <div class="attractions-grid">
+                        <!-- Hiking Trails -->
+                        <article class="attraction-card" data-gallery='[
+                            {"url": "../assets/images/destinations/razma/hiking-1.jpg", "caption": "Mountain Trail"},
+                            {"url": "../assets/images/destinations/razma/hiking-2.jpg", "caption": "Valley View"},
+                            {"url": "../assets/images/destinations/razma/hiking-3.jpg", "caption": "Forest Path"},
+                            {"url": "../assets/images/destinations/razma/hiking-4.jpg", "caption": "Forest Path"}
+                        ]'>
+                            <div class="attraction-image">
+
+                                <img src="../assets/images/destinations/razma/hiking-1.jpg" alt="Razma Hiking Trails">
+                                <span class="attraction-type">Nature</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
+                            </div>
+                            <div class="attraction-content">
+                                <h3>Mountain Trails</h3>
+                                <p>Network of well-marked hiking trails offering stunning mountain views.</p>
+                                <ul class="attraction-details">
+                                    <li><i class="fas fa-clock"></i> 2-6 hours</li>
+                                    <li><i class="fas fa-mountain"></i> Various Difficulties</li>
+                                    <li><i class="fas fa-map-marked-alt"></i> Marked Paths</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <!-- Pine Forests -->
+                        <article class="attraction-card" data-gallery='[
+                            {"url": "../assets/images/destinations/razma/forest-1.jpg", "caption": "Pine Forest"},
+                            {"url": "../assets/images/destinations/razma/forest-2.jpg", "caption": "Forest Trail"},
+                            {"url": "../assets/images/destinations/razma/forest-3.jpg", "caption": "Forest View"},
+                            {"url": "../assets/images/destinations/razma/forest-4.jpg", "caption": "Forest View"}
+                        ]'>
+                            <div class="attraction-image">
+
+                                <img src="../assets/images/destinations/razma/forest-1.jpg" alt="Razma Pine Forests">
+                                <span class="attraction-type">Nature</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
+                            </div>
+                            <div class="attraction-content">
+                                <h3>Pine Forests</h3>
+                                <p>Ancient pine forests perfect for nature walks and photography.</p>
+                                <ul class="attraction-details">
+                                    <li><i class="fas fa-tree"></i> Natural Reserve</li>
+                                    <li><i class="fas fa-camera"></i> Photo Spots</li>
+                                    <li><i class="fas fa-leaf"></i> Flora & Fauna</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <!-- Traditional Villages -->
+                        <article class="attraction-card" data-gallery='[
+                            {"url": "../assets/images/destinations/razma/village-1.jpg", "caption": "Traditional Houses"},
+                            {"url": "../assets/images/destinations/razma/village-2.jpg", "caption": "Village Life"},
+                            {"url": "../assets/images/destinations/razma/village-3.jpg", "caption": "Local Architecture"},
+                            {"url": "../assets/images/destinations/razma/village-4.jpg", "caption": "Local Architecture"}
+                        ]'>
+                            <div class="attraction-image">
+
+                                <img src="../assets/images/destinations/razma/village-1.jpg" alt="Razma Villages">
+                                <span class="attraction-type">Cultural</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
+                            </div>
+                            <div class="attraction-content">
+                                <h3>Traditional Villages</h3>
+                                <p>Experience authentic mountain village life and local hospitality.</p>
+                                <ul class="attraction-details">
+                                    <li><i class="fas fa-home"></i> Local Architecture</li>
+                                    <li><i class="fas fa-users"></i> Local Culture</li>
+                                    <li><i class="fas fa-utensils"></i> Traditional Food</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <!-- Mountain Lakes -->
+                        <article class="attraction-card" data-gallery='[
+                            {"url": "../assets/images/destinations/razma/lakes-1.jpg", "caption": "Mountain Lake View"},
+                            {"url": "../assets/images/destinations/razma/lakes-2.jpg", "caption": "Lake Trail"},
+                            {"url": "../assets/images/destinations/razma/lakes-3.jpg", "caption": "Lakeside Scenery"}
+                        ]'>
+                            <div class="attraction-image">
+                                <img src="../assets/images/destinations/razma/lakes-1.jpg" alt="Razma Mountain Lakes">
+                                <span class="attraction-type">Nature</span>
+                                <span class="season-badge">Summer</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
+                            </div>
+                            <div class="attraction-content">
+                                <h3>Mountain Lakes</h3>
+                                <p>Crystal clear alpine lakes surrounded by pristine wilderness.</p>
+                                <ul class="attraction-details">
+                                    <li><i class="fas fa-hiking"></i> 1-2 hour hike</li>
+                                    <li><i class="fas fa-water"></i> Swimming possible</li>
+                                    <li><i class="fas fa-sun"></i> Best in summer</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Local Experiences -->
+                    <h2>Local Experiences</h2>
+                    <div class="experiences-grid">
+                        <div class="experience-card">
+                            <i class="fas fa-hiking"></i>
+                            <h3>Mountain Hiking</h3>
+                            <p>Explore marked trails through stunning landscapes.</p>
+                        </div>
+
+                        <div class="experience-card">
+                            <i class="fas fa-camera"></i>
+                            <h3>Photography</h3>
+                            <p>Capture breathtaking mountain vistas.</p>
+                        </div>
+
+                        <div class="experience-card">
+                            <i class="fas fa-campground"></i>
+                            <h3>Camping</h3>
+                            <p>Camp under the stars in designated areas.</p>
+                        </div>
+
+                        <div class="experience-card">
+                            <i class="fas fa-utensils"></i>
+                            <h3>Local Cuisine</h3>
+                            <p>Taste traditional mountain dishes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Getting Around -->
+                    <h2>Getting Around</h2>
+                    <div class="transport-section">
+                        <div class="transport-info-grid">
+                            <div class="transport-card">
+                                <i class="fas fa-car"></i>
+                                <h3>By Car</h3>
+                                <ul>
+                                    <li><i class="fas fa-road"></i> 2 hours from Shkodër</li>
+                                    <li><i class="fas fa-info-circle"></i> Mountain roads</li>
+                                    <li><i class="fas fa-parking"></i> Parking available</li>
+                                </ul>
+                            </div>
+
+                            <div class="transport-card">
+                                <i class="fas fa-bus"></i>
+                                <h3>Public Transport</h3>
+                                <ul>
+                                    <li><i class="fas fa-clock"></i> Limited service</li>
+                                    <li><i class="fas fa-calendar-alt"></i> Check schedules</li>
+                                    <li><i class="fas fa-phone"></i> Booking recommended</li>
+                                </ul>
+                            </div>
+
+                            <div class="transport-card">
+                                <i class="fas fa-hiking"></i>
+                                <h3>On Foot</h3>
+                                <ul>
+                                    <li><i class="fas fa-map-signs"></i> Marked hiking trails</li>
+                                    <li><i class="fas fa-mountain"></i> Various difficulty levels</li>
+                                    <li><i class="fas fa-shoe-prints"></i> Proper footwear needed</li>
+                                </ul>
+                            </div>
+
+                            <div class="transport-card">
+                                <i class="fas fa-horse"></i>
+                                <h3>Horse Riding</h3>
+                                <ul>
+                                    <li><i class="fas fa-clock"></i> Tours available daily</li>
+                                    <li><i class="fas fa-euro-sign"></i> From €25/hour</li>
+                                    <li><i class="fas fa-user-friends"></i> Guide included</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Weather Widget -->
+                    <div class="widget weather-widget">
+                        <h3>Current Weather</h3>
+                        <div class="weather-info">
+                            <div style="text-align: center;">
+                                <!-- Weather icon and temperature will be inserted here by JS -->
+                            </div>
+                            
+                            <div class="weather-details" style="display: flex; justify-content: center; gap: 30px; margin: 20px 0;">
+                                <!-- Weather details will be inserted here by JS -->
+                            </div>
+
+                            <div class="forecast" style="display: flex; justify-content: space-around; text-align: center; margin-top: 20px;">
+                                <!-- Forecast will be inserted here by JS -->
+                            </div>
+
+                            <div style="margin-top: 20px; padding: 10px; background-color: #fff3cd; color: #856404; border-radius: 4px; text-align: center;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                Mountain weather can change rapidly. Check forecast before hiking.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Widget -->
+                    <div class="widget map-widget">
+                        <h3>Location</h3>
+                        <div id="destination-map"></div>
+                        <a href="https://goo.gl/maps/razma" class="directions-link" target="_blank">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                    </div>
+
+                    <!-- Practical Info Widget -->
+                    <div class="widget practical-info">
+                        <h3>Practical Information</h3>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <i class="fas fa-signal"></i>
+                                <div class="info-content">
+                                    <h4>Mobile Coverage</h4>
+                                    <p>Limited in some areas</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <div class="info-content">
+                                    <h4>Payment</h4>
+                                    <p>Cash preferred</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-first-aid"></i>
+                                <div class="info-content">
+                                    <h4>Medical</h4>
+                                    <p>Basic facilities available</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <div class="info-content">
+                                    <h4>Emergency</h4>
+                                    <p>112 - Emergency Services</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tour Booking Widget -->
+                    <div class="widget booking-widget">
+                        <h3>Book a Guide</h3>
+                        <div class="tour-options">
+                            <div class="tour-option">
+                                <h4>Hiking Tour</h4>
+                                <p>6 hours • From €40/person</p>
+                                <button class="book-button">Book Now</button>
+                            </div>
+                            <div class="tour-option">
+                                <h4>Village Experience</h4>
+                                <p>Full day • From €50/person</p>
+                                <button class="book-button">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seasonal Notice -->
+                    <div class="seasonal-notice">
+                        <i class="fas fa-calendar-alt"></i>
+                        Best visiting season: April to October
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Destinations -->
+    <section class="related-destinations">
+        <div class="container">
+            <h2>Nearby Destinations</h2>
+            <p>Explore other fascinating destinations in the region</p>
+            
+            <div class="related-grid">
+                <!-- Theth -->
+                <article class="related-card">
+                    <div class="related-image">
+                        <img src="../assets/images/destinations/theth/main.jpg" alt="Theth">
+                        <div class="related-overlay">
+                            <span>1.5 hours away</span>
+                        </div>
+                    </div>
+                    <div class="related-content">
+                        <h3>Theth</h3>
+                        <p>National Park with stunning alpine scenery</p>
+                        <a href="theth.html" class="related-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Shkodër -->
+                <article class="related-card">
+                    <div class="related-image">
+                        <img src="../assets/images/destinations/shkoder/main.jpg" alt="Shkodër">
+                        <div class="related-overlay">
+                            <span>2 hours away</span>
+                        </div>
+                    </div>
+                    <div class="related-content">
+                        <h3>Shkodër</h3>
+                        <p>Historic city with rich cultural heritage</p>
+                        <a href="shkoder.html" class="related-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Valbona -->
+                <article class="related-card">
+                    <div class="related-image">
+                        <img src="../assets/images/destinations/valbona/main.jpg" alt="Valbona">
+                        <div class="related-overlay">
+                            <span>2.5 hours away</span>
+                        </div>
+                    </div>
+                    <div class="related-content">
+                        <h3>Valbona Valley</h3>
+                        <p>Spectacular national park in the Albanian Alps</p>
+                        <a href="valbona.html" class="related-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Footer content -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbrlcFOKXQxkny7jTyglMq8IQrkiNMnGo"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/destination-single.js"></script>
+    <script src="../assets/js/razma-map.js"></script>
+    <script src="../assets/js/image-popup.js"></script>
+</body>
+</html> 

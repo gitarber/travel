@@ -464,57 +464,70 @@
     border-bottom: 2px solid var(--accent-color);
 }
 
-/* Weather Widget */
-.weather-content {
+/* Weather Widget Styles */
+.weather-info {
     text-align: center;
+    padding: 20px;
 }
 
-.weather-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
+.weather-info i.fa-sun {
+    color: #FFD700;
 }
 
-.weather-main i {
-    font-size: 3rem;
-    color: #ffd700;
+.weather-info .forecast i.fa-sun {
+    color: #FFD700;
 }
 
-.temperature {
+.current-temp {
     font-size: 2.5rem;
-    font-weight: 600;
+    margin-bottom: 20px;
     color: var(--primary-color);
+}
+
+.current-temp i.fa-sun {
+    color: #FFD700;
+    margin-right: 10px;
 }
 
 .weather-details {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
     margin-bottom: 20px;
-}
-
-.weather-details span {
-    display: flex;
-    align-items: center;
-    gap: 5px;
     color: var(--text-color);
-    font-size: 0.9rem;
 }
 
-.weather-forecast {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding-top: 15px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+.forecast {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
 }
 
-.forecast-day {
+.forecast .day {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
+}
+
+.forecast .day span:first-child {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.weather-alert {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff3cd;
+    color: #856404;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.weather-alert i {
+    margin-right: 5px;
 }
 
 /* Map Widget */
@@ -769,12 +782,18 @@
 
 /* Seasonal info styles */
 .seasonal-notice {
-    background: var(--accent-color);
+    background-color: var(--accent-color);
     color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    margin: 15px 0;
-    font-size: 0.9rem;
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.seasonal-notice i {
+    font-size: 1.2rem;
 }
 
 /* Hiking difficulty indicators */
@@ -924,4 +943,100 @@ body {
 .destination-hero {
     margin-top: -80px; /* Same as body padding-top */
     padding-top: 80px; /* Same as body padding-top */
+}
+
+.transport-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.transport-card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.transport-card i {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.transport-card h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.transport-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.transport-card ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.transport-card ul li i {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.transport-card p {
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.seasonal-widget {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.seasonal-info {
+    padding: 15px;
+}
+
+.season-row {
+    margin-bottom: 20px;
+}
+
+.season {
+    padding: 10px;
+    border-radius: 6px;
+    background: #f8f9fa;
+}
+
+.season h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.season p {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.season i.fa-check {
+    color: #28a745;
+}
+
+.season i.fa-times {
+    color: #dc3545;
+}
+
+.season i.fa-exclamation-triangle {
+    color: #ffc107;
+}
+
+.season i.fa-snowflake {
+    color: #17a2b8;
 } 

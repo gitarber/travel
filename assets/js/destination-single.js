@@ -190,58 +190,148 @@ document.addEventListener('DOMContentLoaded', function() {
         initMap();
     }
 
-    // Weather widget update
-    function updateWeather() {
-        // Fetch weather data for Valbona
-        fetch('https://api.weatherapi.com/v1/forecast.json?key=YOUR_API_KEY&q=Valbona,Albania&days=3')
-            .then(response => response.json())
-            .then(data => {
-                // Update current weather
-                document.querySelector('.temperature').textContent = `${data.current.temp_c}°C`;
+    // Weather widget functionality
+    class WeatherWidget {
+        constructor() {
+            this.API_KEY = 'e4dbf30cab254c74b03184912251002';
+            this.locationCoords = {
+                'Shkodër': '42.0683,19.5126',
+                'Theth': '42.3833,19.7667',
+                'Valbona': '42.4275,19.8961',
+                'Koman Lake': '42.1087,19.8267',
+                'Lezhe': '41.7836,19.6442',
+                'Berat': '40.7050,19.9520',
+                'Gjirokastër': '40.0758,20.1388',
+                'Sarandë': '39.8759,20.0027',
+                'Razma': '42.2167,19.6333'
+            };
+            this.initWeather();
+        }
+
+        async initWeather() {
+            // Get current page location from the last breadcrumb item
+            const location = document.querySelector('.breadcrumb span:last-child').textContent.trim();
+            const coordinates = this.locationCoords[location] || `${location},Albania`;
+            await this.updateWeather(coordinates);
+        }
+
+        async updateWeather(coordinates) {
+            try {
+                const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${this.API_KEY}&q=${coordinates}&days=3`);
+                const data = await response.json();
                 
-                // Update weather icon based on conditions
-                const weatherIcon = document.querySelector('.weather-main i');
-                const condition = data.current.condition.code;
-                updateWeatherIcon(weatherIcon, condition);
+                if (data.error) {
+                    console.error('Weather API Error:', data.error);
+                    return;
+                }
 
-                // Update weather details
-                document.querySelector('.weather-details span:first-child').innerHTML = 
-                    `<i class="fas fa-tint"></i> Humidity: ${data.current.humidity}%`;
-                document.querySelector('.weather-details span:last-child').innerHTML = 
-                    `<i class="fas fa-wind"></i> Wind: ${data.current.wind_kph} km/h`;
+                // Update current weather
+                const currentTemp = Math.round(data.current.temp_c);
+                const currentCondition = data.current.condition.code;
+                
+                // Update main temperature display
+                const weatherInfo = document.querySelector('.weather-info');
+                const mainDisplay = weatherInfo.querySelector('div:first-child');
+                mainDisplay.innerHTML = `
+                    <i class="fas ${this.getWeatherIcon(currentCondition)}" style="color: #FFD700; font-size: 3rem;"></i>
+                    <span style="font-size: 3rem; color: #2B3B4E; margin-left: 10px;">${currentTemp}°C</span>
+                `;
 
-                // Update forecast
-                const forecastDays = document.querySelectorAll('.forecast-day');
-                data.forecast.forecastday.forEach((day, index) => {
-                    if (forecastDays[index]) {
-                        const dayTemp = day.day.avgtemp_c;
-                        const dayCondition = day.day.condition.code;
-                        const dayIcon = forecastDays[index].querySelector('i');
-                        
-                        updateWeatherIcon(dayIcon, dayCondition);
-                        forecastDays[index].querySelector('span:last-child').textContent = `${dayTemp}°C`;
-                    }
+                // Update humidity and wind
+                weatherInfo.querySelector('.weather-details').innerHTML = `
+                    <div>
+                        <i class="fas fa-tint"></i> Humidity: ${data.current.humidity}%
+                    </div>
+                    <div>
+                        <i class="fas fa-wind"></i> Wind: ${Math.round(data.current.wind_kph)} km/h
+                    </div>
+                `;
+
+                // Update 3-day forecast
+                const forecastContainer = weatherInfo.querySelector('.forecast');
+                const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+                
+                let forecastHTML = '';
+                data.forecast.forecastday.forEach(day => {
+                    const date = new Date(day.date);
+                    const dayName = days[date.getDay()];
+                    const icon = this.getWeatherIcon(day.day.condition.code);
+                    const temp = Math.round(day.day.avgtemp_c);
+                    
+                    forecastHTML += `
+                        <div>
+                            <div>${dayName}</div>
+                            <i class="fas ${icon}" ${icon.includes('sun') ? 'style="color: #FFD700;"' : ''}></i>
+                            <div>${temp}°C</div>
+                        </div>
+                    `;
                 });
-            })
-            .catch(error => console.error('Error fetching weather:', error));
+                forecastContainer.innerHTML = forecastHTML;
+
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+            }
+        }
+
+        getWeatherIcon(code) {
+            // Extended weather code mapping
+            const iconMap = {
+                1000: 'fa-sun', // Clear
+                1003: 'fa-cloud-sun', // Partly cloudy
+                1006: 'fa-cloud', // Cloudy
+                1009: 'fa-cloud', // Overcast
+                1030: 'fa-smog', // Mist
+                1063: 'fa-cloud-rain', // Patchy rain
+                1066: 'fa-snowflake', // Patchy snow
+                1069: 'fa-snowflake', // Patchy sleet
+                1072: 'fa-cloud-rain', // Patchy freezing drizzle
+                1087: 'fa-bolt', // Thundery outbreaks
+                1114: 'fa-snowflake', // Blowing snow
+                1117: 'fa-snowflake', // Blizzard
+                1135: 'fa-smog', // Fog
+                1147: 'fa-smog', // Freezing fog
+                1150: 'fa-cloud-rain', // Patchy light drizzle
+                1153: 'fa-cloud-rain', // Light drizzle
+                1168: 'fa-cloud-rain', // Freezing drizzle
+                1171: 'fa-cloud-rain', // Heavy freezing drizzle
+                1180: 'fa-cloud-rain', // Patchy light rain
+                1183: 'fa-cloud-rain', // Light rain
+                1186: 'fa-cloud-rain', // Moderate rain
+                1189: 'fa-cloud-rain', // Moderate rain
+                1192: 'fa-cloud-showers-heavy', // Heavy rain
+                1195: 'fa-cloud-showers-heavy', // Heavy rain
+                1198: 'fa-cloud-rain', // Light freezing rain
+                1201: 'fa-cloud-rain', // Moderate/heavy freezing rain
+                1204: 'fa-snowflake', // Light sleet
+                1207: 'fa-snowflake', // Moderate/heavy sleet
+                1210: 'fa-snowflake', // Patchy light snow
+                1213: 'fa-snowflake', // Light snow
+                1216: 'fa-snowflake', // Patchy moderate snow
+                1219: 'fa-snowflake', // Moderate snow
+                1222: 'fa-snowflake', // Patchy heavy snow
+                1225: 'fa-snowflake', // Heavy snow
+                1237: 'fa-snowflake', // Ice pellets
+                1240: 'fa-cloud-rain', // Light rain shower
+                1243: 'fa-cloud-showers-heavy', // Moderate/heavy rain shower
+                1246: 'fa-cloud-showers-heavy', // Torrential rain shower
+                1249: 'fa-cloud-rain', // Light sleet showers
+                1252: 'fa-cloud-rain', // Moderate/heavy sleet showers
+                1255: 'fa-snowflake', // Light snow showers
+                1258: 'fa-snowflake', // Moderate/heavy snow showers
+                1261: 'fa-snowflake', // Light showers of ice pellets
+                1264: 'fa-snowflake', // Moderate/heavy showers of ice pellets
+                1273: 'fa-bolt', // Patchy light rain with thunder
+                1276: 'fa-bolt', // Moderate/heavy rain with thunder
+                1279: 'fa-bolt', // Patchy light snow with thunder
+                1282: 'fa-bolt' // Moderate/heavy snow with thunder
+            };
+
+            return iconMap[code] || 'fa-cloud'; // Default to cloud if code not found
+        }
     }
 
-    // Helper function to update weather icons
-    function updateWeatherIcon(iconElement, conditionCode) {
-        // Map condition codes to Font Awesome icons
-        const iconMap = {
-            1000: 'sun', // Clear
-            1003: 'cloud-sun', // Partly cloudy
-            1006: 'cloud', // Cloudy
-            1183: 'cloud-rain', // Light rain
-            1189: 'cloud-showers-heavy', // Moderate rain
-            1216: 'snowflake', // Light snow
-            1225: 'snowflake' // Heavy snow
-        };
-
-        const iconClass = iconMap[conditionCode] || 'cloud';
-        iconElement.className = `fas fa-${iconClass}`;
-    }
+    // Initialize weather widget when page loads
+    new WeatherWidget();
 
     // Tour booking functionality
     const bookButtons = document.querySelectorAll('.book-button');
@@ -252,10 +342,6 @@ document.addEventListener('DOMContentLoaded', function() {
             alert(`Booking system for ${tourName} coming soon!`);
         });
     });
-
-    // Initialize weather updates
-    updateWeather();
-    setInterval(updateWeather, 1800000); // Update every 30 minutes
 
     // Add trail difficulty warnings based on weather
     function updateTrailWarnings() {

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koman Lake - Fjord-like Paradise | Visit Albania</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/destination-single.css">
+    <link rel="stylesheet" href="../styles/image-popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Image Popup Structure -->
+    <div class="image-popup" id="imagePopup">
+        <span class="close-popup">&times;</span>
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3></h3>
+            </div>
+            <div class="popup-image-container">
+                <img src="" alt="" class="popup-image">
+                <button class="nav-btn prev-btn">&lt;</button>
+                <button class="nav-btn next-btn">&gt;</button>
+            </div>
+            <div class="popup-thumbnails"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="/assets/images/logo.jpg" alt="Albania Visit Logo">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../destinations.html" class="active">Destinations</a></li>
+                    <li><a href="../index.html#landmarks">Landmarks</a></li>
+                    <li><a href="../index.html#experiences">Experiences</a></li>
+                    <li><a href="../index.html#advisor">Advisor</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../destinations.html">Destinations</a>
+                <span>/</span>
+                <span>Koman Lake</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="destination-hero" style="background-image: url('../assets/images/destinations/koman/hero.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Koman Lake</h1>
+                <p>Albania's Most Spectacular Ferry Journey</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info -->
+    <section class="quick-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Northern Albania</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Best Time to Visit</h3>
+                    <p>May to October</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Ferry Duration</h3>
+                    <p>2.5-3 Hours</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-star"></i>
+                    <h3>Highlights</h3>
+                    <p>Scenic Views & Nature</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="destination-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-content">
+                    <h2>About Koman Lake</h2>
+                    <div class="content-block">
+                        <p>Koman Lake is a man-made reservoir that has become one of Albania's most spectacular natural attractions. The ferry journey through its dramatic fjord-like landscape is often compared to the Norwegian fjords, offering breathtaking views of steep cliffs, hidden waterfalls, and pristine nature.</p>
+                        <p>Created by the Koman Hydroelectric Dam in 1978, the lake winds through deep gorges and mountains, providing a vital transport link between Koman and Fierza while offering visitors an unforgettable journey through some of Albania's most dramatic scenery.</p>
+                    </div>
+
+                    <h2>What to See</h2>
+                    <div class="attractions-grid">
+                        <!-- Ferry Journey -->
+                        <article class="attraction-card" data-gallery='[
+                            {
+                                "url": "../assets/images/destinations/koman/ferry.jpg",
+                                "caption": "Koman Ferry Main View"
+                            },
+                            {
+                                "url": "../assets/images/destinations/koman/ferry-2.jpg",
+                                "caption": "Journey Through Canyons"
+                            },
+                            {
+                                "url": "../assets/images/destinations/koman/ferry-3.jpg",
+                                "caption": "Dramatic Cliffs"
+                            },
+                            {
+                                "url": "../assets/images/destinations/koman/ferry-4.jpg",
+                                "caption": "Morning Mist on Lake"
+                            }
+                        ]'>
+                            <div class="attraction-image">
+                                <img src="../assets/images/destinations/koman/ferry.jpg" alt="Koman Ferry">
+                                <span class="attraction-type">Lake Journey</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
+                            </div>
+                            <div class="attraction-content">
+                                <h3>Ferry Journey</h3>
+                                <p>Spectacular boat journey through fjord-like landscapes.</p>
+                                <ul class="attraction-details">
+                                    <li><i class="fas fa-clock"></i> 2.5-3 hours</li>
+                                    <li><i class="fas fa-camera"></i> Photo Spots</li>
+                                    <li><i class="fas fa-ship"></i> Daily Service</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <!-- Waterfalls -->
+                        <article class="attraction-card" data-gallery='[
+                            {
+                                "url": "../assets/images/destinations/koman/waterfalls.jpg",
+                                "caption": "Hidden Waterfalls"
+                            },
+                            {
+                                "url": "../assets/images/destinations/koman/waterfalls-2.jpg",
+                                "caption": "Cascade Views"
+                            },
+                            {
+                                "url": "../assets/images/destinations/koman/waterfalls-3.jpg",
+                                "caption": "Spring Waters"
+                            },
+                            {
+                                "url": "../assets/images/destinations/koman/waterfalls-4.jpg",
+                                "caption": "Mountain Streams"
+                            }
+                        ]'>
+                            <div class="attraction-image">
+                                <img src="../assets/images/destinations/koman/waterfalls.jpg" alt="Hidden Waterfalls">
+                                <span class="attraction-type">Natural Wonder</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
+                            </div>
+                            <div class="attraction-content">
+                                <h3>Hidden Waterfalls</h3>
+                                <p>Discover secluded waterfalls along the journey.</p>
+                                <ul class="attraction-details">
+                                    <li><i class="fas fa-water"></i> Natural Falls</li>
+                                    <li><i class="fas fa-camera"></i> Photography</li>
+                                    <li><i class="fas fa-mountain"></i> Scenic Views</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <!-- Mountain Villages -->
+                        <article class="attraction-card" data-gallery='[
+                            {
+                                "url": "../assets/images/destinations/koman/villages.jpg",
+                                "caption": "Remote Mountain Villages"
+                            },
+                            {
+                                "url": "../assets/images/destinations/koman/villages-2.jpg",
+                                "caption": "Traditional Life"
+                            },
+                            {
+                                "url": "../assets/images/destinations/koman/villages-3.jpg",
+                                "caption": "Local Culture"
+                            },
+                            {
+                                "url": "../assets/images/destinations/koman/villages-4.jpg",
+                                "caption": "Village Views"
+                            }
+                        ]'>
+                            <div class="attraction-image">
+                                <img src="../assets/images/destinations/koman/villages.jpg" alt="Mountain Villages">
+                                <span class="attraction-type">Cultural Sites</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
+                            </div>
+                            <div class="attraction-content">
+                                <h3>Mountain Villages</h3>
+                                <p>Glimpse traditional life in remote mountain communities.</p>
+                                <ul class="attraction-details">
+                                    <li><i class="fas fa-home"></i> Local Life</li>
+                                    <li><i class="fas fa-users"></i> Culture</li>
+                                    <li><i class="fas fa-camera"></i> Photo Ops</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <!-- Wildlife Spotting -->
+                        <article class="attraction-card" data-gallery='[
+                            {
+                                "url": "../assets/images/destinations/koman/wildlife.jpg",
+                                "caption": "Lake Wildlife"
+                            },
+                            {
+                                "url": "../assets/images/destinations/koman/wildlife-2.jpg",
+                                "caption": "Bird Species"
+                            },
+                            {
+                                "url": "../assets/images/destinations/koman/wildlife-3.jpg",
+                                "caption": "Natural Habitat"
+                            },
+                            {
+                                "url": "../assets/images/destinations/koman/wildlife-4.jpg",
+                                "caption": "Wildlife Viewing"
+                            }
+                        ]'>
+                            <div class="attraction-image">
+                                <img src="../assets/images/destinations/koman/wildlife.jpg" alt="Wildlife Spotting">
+                                <span class="attraction-type">Nature</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
+                            </div>
+                            <div class="attraction-content">
+                                <h3>Wildlife Spotting</h3>
+                                <p>Observe diverse bird species and local wildlife.</p>
+                                <ul class="attraction-details">
+                                    <li><i class="fas fa-dove"></i> Birdwatching</li>
+                                    <li><i class="fas fa-binoculars"></i> Wildlife</li>
+                                    <li><i class="fas fa-camera"></i> Photography</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Local Experiences -->
+                    <h2>Local Experiences</h2>
+                    <div class="experiences-grid">
+                        <!-- Photography -->
+                        <div class="experience-card">
+                            <i class="fas fa-camera"></i>
+                            <h3>Photography Tours</h3>
+                            <p>Capture stunning landscapes and natural beauty.</p>
+                        </div>
+
+                        <!-- Boat Tours -->
+                        <div class="experience-card">
+                            <i class="fas fa-ship"></i>
+                            <h3>Private Boat Tours</h3>
+                            <p>Explore hidden coves and remote areas.</p>
+                        </div>
+
+                        <!-- Hiking -->
+                        <div class="experience-card">
+                            <i class="fas fa-hiking"></i>
+                            <h3>Shore Hiking</h3>
+                            <p>Trek along scenic shoreline trails.</p>
+                        </div>
+
+                        <!-- Fishing -->
+                        <div class="experience-card">
+                            <i class="fas fa-fish"></i>
+                            <h3>Fishing Trips</h3>
+                            <p>Try your luck in the lake's waters.</p>
+                        </div>
+                    </div>
+
+                    <!-- Getting Around -->
+                    <h2>Getting Around</h2>
+                    <div class="transport-section">
+                        <div class="transport-info-grid">
+                            <div class="transport-card">
+                                <i class="fas fa-ship"></i>
+                                <h3>Ferry Service</h3>
+                                <ul>
+                                    <li><i class="fas fa-clock"></i> Departure: 9:00 AM from Koman</li>
+                                    <li><i class="fas fa-clock"></i> Return: 1:00 PM from Fierza</li>
+                                    <li><i class="fas fa-euro-sign"></i> Price: €5-10 per person</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="transport-card">
+                                <i class="fas fa-car"></i>
+                                <h3>Getting to Koman</h3>
+                                <ul>
+                                    <li><i class="fas fa-road"></i> 1.5 hours from Shkodër</li>
+                                    <li><i class="fas fa-parking"></i> Parking available at port</li>
+                                    <li><i class="fas fa-taxi"></i> Taxis available from Shkodër</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="transport-card">
+                                <i class="fas fa-info-circle"></i>
+                                <h3>Important Notes</h3>
+                                <ul>
+                                    <li><i class="fas fa-calendar-check"></i> Advance booking recommended</li>
+                                    <li><i class="fas fa-clock"></i> Arrive 30 mins before departure</li>
+                                    <li><i class="fas fa-sun"></i> Best as a day trip</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="transport-card">
+                                <i class="fas fa-bed"></i>
+                                <h3>Accommodation Note</h3>
+                                <p>Koman is best experienced as a day trip. We recommend staying in nearby Shkodër or Valbona, 
+                                   which offer a wide range of accommodation options. The ferry journey is timed perfectly for 
+                                   day visitors, allowing you to experience the spectacular journey and return the same day.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Weather Widget -->
+                    <div class="widget weather-widget">
+                        <h3>Current Weather</h3>
+                        <div class="weather-info">
+                            <div style="text-align: center;">
+                                <!-- Weather icon and temperature will be inserted here by JS -->
+                            </div>
+
+                            <div class="weather-details" style="display: flex; justify-content: center; gap: 30px; margin: 20px 0;">
+                                <!-- Weather details will be inserted here by JS -->
+                            </div>
+
+                            <div class="forecast" style="display: flex; justify-content: space-around; text-align: center; margin-top: 20px;">
+                                <!-- Forecast will be inserted here by JS -->
+                            </div>
+
+                            <div style="margin-top: 20px; padding: 10px; background-color: #fff3cd; color: #856404; border-radius: 4px; text-align: center;">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                Check lake conditions before ferry journey.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Widget -->
+                    <div class="widget map-widget">
+                        <h3>Location</h3>
+                        <div id="destination-map"></div>
+                        <a href="https://goo.gl/maps/koman" class="directions-link" target="_blank">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                    </div>
+
+                    <!-- Practical Info Widget -->
+                    <div class="widget practical-info">
+                        <h3>Practical Information</h3>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <i class="fas fa-signal"></i>
+                                <div class="info-content">
+                                    <h4>Mobile Coverage</h4>
+                                    <p>Limited during journey</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <div class="info-content">
+                                    <h4>Payment</h4>
+                                    <p>Cash preferred for tickets</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-first-aid"></i>
+                                <div class="info-content">
+                                    <h4>Medical</h4>
+                                    <p>Basic facilities at terminals</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <div class="info-content">
+                                    <h4>Emergency</h4>
+                                    <p>Port Authority: +355 XX XXX XXX</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tour Booking Widget -->
+                    <div class="widget booking-widget">
+                        <h3>Book a Tour</h3>
+                        <div class="tour-options">
+                            <div class="tour-option">
+                                <h4>Standard Ferry Journey</h4>
+                                <p>2.5-3 hours • From €15/person</p>
+                                <button class="book-button">Book Now</button>
+                            </div>
+                            <div class="tour-option">
+                                <h4>Private Boat Tour</h4>
+                                <p>4 hours • From €120/group</p>
+                                <button class="book-button">Book Now</button>
+                            </div>
+                            <div class="tour-option">
+                                <h4>Photography Tour</h4>
+                                <p>Full day • From €80/person</p>
+                                <button class="book-button">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seasonal Notice -->
+                    <div class="seasonal-notice">
+                        <i class="fas fa-calendar-alt"></i>
+                        Best visiting season: May to October
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Destinations -->
+    <section class="related-destinations">
+        <div class="container">
+            <h2>Nearby Destinations</h2>
+            <p>Explore other fascinating destinations near Koman Lake</p>
+            
+            <div class="related-grid">
+                <!-- Valbona -->
+                <article class="related-card">
+                    <div class="related-image">
+                        <img src="../assets/images/destinations/valbona/main.jpg" alt="Valbona Valley">
+                        <div class="related-overlay">
+                            <span>2 hours away</span>
+                        </div>
+                    </div>
+                    <div class="related-content">
+                        <h3>Valbona Valley</h3>
+                        <p>Spectacular mountain valley in the Albanian Alps</p>
+                        <a href="valbona.html" class="related-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Shkodër -->
+                <article class="related-card">
+                    <div class="related-image">
+                        <img src="../assets/images/destinations/shkoder/main.jpg" alt="Shkodër">
+                        <div class="related-overlay">
+                            <span>1.5 hours away</span>
+                        </div>
+                    </div>
+                    <div class="related-content">
+                        <h3>Shkodër</h3>
+                        <p>Historic city with rich cultural heritage</p>
+                        <a href="shkoder.html" class="related-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Theth -->
+                <article class="related-card">
+                    <div class="related-image">
+                        <img src="../assets/images/destinations/theth/main.jpg" alt="Theth">
+                        <div class="related-overlay">
+                            <span>3 hours away</span>
+                        </div>
+                    </div>
+                    <div class="related-content">
+                        <h3>Theth</h3>
+                        <p>Traditional mountain village with stunning landscapes</p>
+                        <a href="theth.html" class="related-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Footer content -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbrlcFOKXQxkny7jTyglMq8IQrkiNMnGo"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/destination-single.js"></script>
+    <script src="../assets/js/koman-map.js"></script>
+    <script src="../assets/js/image-popup.js"></script>
+</body>
+</html> 
