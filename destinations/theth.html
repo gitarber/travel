@@ -8,8 +8,25 @@
     <link rel="stylesheet" href="../styles/destination-single.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/image-popup.css">
 </head>
 <body>
+    <!-- Add this right after the opening <body> tag -->
+    <div class="image-popup" id="imagePopup">
+        <span class="close-popup">&times;</span>
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3></h3>
+            </div>
+            <div class="popup-image-container">
+                <img src="" alt="" class="popup-image">
+                <button class="nav-btn prev-btn">&lt;</button>
+                <button class="nav-btn next-btn">&gt;</button>
+            </div>
+            <div class="popup-thumbnails"></div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -94,10 +111,30 @@
                     <h2>What to See</h2>
                     <div class="attractions-grid">
                         <!-- Theth Waterfall -->
-                        <article class="attraction-card">
+                        <article class="attraction-card" data-gallery='[
+                            {
+                                "url": "../assets/images/destinations/theth/waterfall.jpg",
+                                "caption": "Theth Waterfall Main View"
+                            },
+                            {
+                                "url": "../assets/images/destinations/theth/waterfall-2.jpg",
+                                "caption": "Waterfall Base"
+                            },
+                            {
+                                "url": "../assets/images/destinations/theth/waterfall-3.jpg",
+                                "caption": "Trail to Waterfall"
+                            },
+                            {
+                                "url": "../assets/images/destinations/theth/waterfall-4.jpg",
+                                "caption": "Waterfall in Spring"
+                            }
+                        ]'>
                             <div class="attraction-image">
                                 <img src="../assets/images/destinations/theth/waterfall.jpg" alt="Theth Waterfall">
                                 <span class="attraction-type">Natural Wonder</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
                             </div>
                             <div class="attraction-content">
                                 <h3>Theth Waterfall</h3>
@@ -111,10 +148,30 @@
                         </article>
 
                         <!-- Blue Eye -->
-                        <article class="attraction-card">
+                        <article class="attraction-card" data-gallery='[
+                            {
+                                "url": "../assets/images/destinations/theth/blue-eye.jpg",
+                                "caption": "Blue Eye Main View"
+                            },
+                            {
+                                "url": "../assets/images/destinations/theth/blue-eye-2.jpg",
+                                "caption": "Crystal Clear Waters"
+                            },
+                            {
+                                "url": "../assets/images/destinations/theth/blue-eye-3.jpg",
+                                "caption": "Surrounding Forest"
+                            },
+                            {
+                                "url": "../assets/images/destinations/theth/blue-eye-4.jpg",
+                                "caption": "Trail View"
+                            }
+                        ]'>
                             <div class="attraction-image">
                                 <img src="../assets/images/destinations/theth/blue-eye.jpg" alt="Blue Eye of Theth">
                                 <span class="attraction-type">Natural Pool</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
                             </div>
                             <div class="attraction-content">
                                 <h3>Blue Eye of Theth</h3>
@@ -128,10 +185,30 @@
                         </article>
 
                         <!-- Lock-in Tower -->
-                        <article class="attraction-card">
+                        <article class="attraction-card" data-gallery='[
+                            {
+                                "url": "../assets/images/destinations/theth/tower.jpg",
+                                "caption": "Lock-in Tower Main View"
+                            },
+                            {
+                                "url": "../assets/images/destinations/theth/tower-2.jpg",
+                                "caption": "Tower Interior"
+                            },
+                            {
+                                "url": "../assets/images/destinations/theth/tower-3.jpg",
+                                "caption": "Historical Artifacts"
+                            },
+                            {
+                                "url": "../assets/images/destinations/theth/tower-4.jpg",
+                                "caption": "Tower at Sunset"
+                            }
+                        ]'>
                             <div class="attraction-image">
                                 <img src="../assets/images/destinations/theth/tower.jpg" alt="Lock-in Tower">
                                 <span class="attraction-type">Historical Site</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
                             </div>
                             <div class="attraction-content">
                                 <h3>Lock-in Tower</h3>
@@ -145,10 +222,30 @@
                         </article>
 
                         <!-- Church of Theth -->
-                        <article class="attraction-card">
+                        <article class="attraction-card" data-gallery='[
+                            {
+                                "url": "../assets/images/destinations/theth/church.jpg",
+                                "caption": "Church of Theth Main View"
+                            },
+                            {
+                                "url": "../assets/images/destinations/theth/church-2.jpg",
+                                "caption": "Church Interior"
+                            },
+                            {
+                                "url": "../assets/images/destinations/theth/church-3.jpg",
+                                "caption": "Historical Details"
+                            },
+                            {
+                                "url": "../assets/images/destinations/theth/church-4.jpg",
+                                "caption": "Church at Dawn"
+                            }
+                        ]'>
                             <div class="attraction-image">
                                 <img src="../assets/images/destinations/theth/church.jpg" alt="Church of Theth">
                                 <span class="attraction-type">Religious Site</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
                             </div>
                             <div class="attraction-content">
                                 <h3>Church of Theth</h3>
@@ -544,5 +641,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbrlcFOKXQxkny7jTyglMq8IQrkiNMnGo"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/destination-single.js"></script>
+    <script src="../assets/js/image-popup.js"></script>
 </body>
 </html>
