@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/destination-single.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/image-popup.css">
 </head>
 <body>
     <!-- Header -->
@@ -94,10 +95,30 @@
                     <h2>What to See</h2>
                     <div class="attractions-grid">
                         <!-- Rozafa Castle -->
-                        <article class="attraction-card">
+                        <article class="attraction-card" data-gallery='[
+                            {
+                                "url": "../assets/images/destinations/shkoder/rozafa.jpg",
+                                "caption": "Rozafa Castle Main View"
+                            },
+                            {
+                                "url": "../assets/images/destinations/shkoder/rozafa-2.jpg",
+                                "caption": "Castle Walls"
+                            },
+                            {
+                                "url": "../assets/images/destinations/shkoder/rozafa-3.jpg",
+                                "caption": "Panoramic View from Castle"
+                            },
+                            {
+                                "url": "../assets/images/destinations/shkoder/rozafa-4.jpg",
+                                "caption": "Castle Interior"
+                            }
+                        ]'>
                             <div class="attraction-image">
                                 <img src="../assets/images/destinations/shkoder/rozafa.jpg" alt="Rozafa Castle">
                                 <span class="attraction-type">Historic Fortress</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
                             </div>
                             <div class="attraction-content">
                                 <h3>Rozafa Castle</h3>
@@ -111,10 +132,30 @@
                         </article>
 
                         <!-- Marubi Museum -->
-                        <article class="attraction-card">
+                        <article class="attraction-card" data-gallery='[
+                            {
+                                "url": "../assets/images/destinations/shkoder/marubi.jpg",
+                                "caption": "Marubi Museum Exterior"
+                            },
+                            {
+                                "url": "../assets/images/destinations/shkoder/marubi-2.jpg",
+                                "caption": "Historic Photo Collection"
+                            },
+                            {
+                                "url": "../assets/images/destinations/shkoder/marubi-3.jpg",
+                                "caption": "Museum Interior"
+                            },
+                            {
+                                "url": "../assets/images/destinations/shkoder/marubi-4.jpg",
+                                "caption": "Photography Exhibition"
+                            }
+                        ]'>
                             <div class="attraction-image">
                                 <img src="../assets/images/destinations/shkoder/marubi.jpg" alt="Marubi Museum">
                                 <span class="attraction-type">Museum</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
                             </div>
                             <div class="attraction-content">
                                 <h3>Marubi National Photography Museum</h3>
@@ -128,10 +169,30 @@
                         </article>
 
                         <!-- Shkodër Lake -->
-                        <article class="attraction-card">
+                        <article class="attraction-card" data-gallery='[
+                            {
+                                "url": "../assets/images/destinations/shkoder/lake.jpg",
+                                "caption": "Lake Shkodër Panorama"
+                            },
+                            {
+                                "url": "../assets/images/destinations/shkoder/lake-2.jpg",
+                                "caption": "Sunset over Lake"
+                            },
+                            {
+                                "url": "../assets/images/destinations/shkoder/lake-3.jpg",
+                                "caption": "Birdwatching Area"
+                            },
+                            {
+                                "url": "../assets/images/destinations/shkoder/lake-4.jpg",
+                                "caption": "Boat Tours"
+                            }
+                        ]'>
                             <div class="attraction-image">
                                 <img src="../assets/images/destinations/shkoder/lake.jpg" alt="Shkodër Lake">
                                 <span class="attraction-type">Natural Wonder</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
                             </div>
                             <div class="attraction-content">
                                 <h3>Lake Shkodër</h3>
@@ -145,10 +206,30 @@
                         </article>
 
                         <!-- Pedestrian Street -->
-                        <article class="attraction-card">
+                        <article class="attraction-card" data-gallery='[
+                            {
+                                "url": "../assets/images/destinations/shkoder/pedestrian.jpg",
+                                "caption": "Kol Idromeno Street Main View"
+                            },
+                            {
+                                "url": "../assets/images/destinations/shkoder/pedestrian-2.jpg",
+                                "caption": "Street Cafes"
+                            },
+                            {
+                                "url": "../assets/images/destinations/shkoder/pedestrian-3.jpg",
+                                "caption": "Historic Buildings"
+                            },
+                            {
+                                "url": "../assets/images/destinations/shkoder/pedestrian-4.jpg",
+                                "caption": "Street Life"
+                            }
+                        ]'>
                             <div class="attraction-image">
                                 <img src="../assets/images/destinations/shkoder/pedestrian.jpg" alt="Kol Idromeno Street">
                                 <span class="attraction-type">City Center</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
                             </div>
                             <div class="attraction-content">
                                 <h3>Kol Idromeno Street</h3>
@@ -541,5 +622,20 @@
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/destination-single.js"></script>
     <script src="../assets/js/shkoder-map.js"></script>
+    <div class="image-popup" id="imagePopup">
+        <span class="close-popup">&times;</span>
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3></h3>
+            </div>
+            <div class="popup-image-container">
+                <img src="" alt="" class="popup-image">
+                <button class="nav-btn prev-btn">&lt;</button>
+                <button class="nav-btn next-btn">&gt;</button>
+            </div>
+            <div class="popup-thumbnails"></div>
+        </div>
+    </div>
+    <script src="../assets/js/image-popup.js"></script>
 </body>
 </html> 

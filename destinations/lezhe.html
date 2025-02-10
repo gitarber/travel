@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/destination-single.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/image-popup.css">
 </head>
 <body>
     <!-- Header -->
@@ -94,11 +95,31 @@
                     <h2>What to See</h2>
                     <div class="attractions-grid">
                         <!-- Lezha Castle -->
-                        <article class="attraction-card">
+                        <article class="attraction-card" data-gallery='[
+                            {
+                                "url": "../assets/images/destinations/lezhe/castle.jpg",
+                                "caption": "Lezha Castle Main View"
+                            },
+                            {
+                                "url": "../assets/images/destinations/lezhe/castle-2.jpg",
+                                "caption": "Castle Walls"
+                            },
+                            {
+                                "url": "../assets/images/destinations/lezhe/castle-3.jpg",
+                                "caption": "Panoramic View from Castle"
+                            },
+                            {
+                                "url": "../assets/images/destinations/lezhe/castle-4.jpg",
+                                "caption": "Castle Interior"
+                            }
+                        ]'>
                             <div class="attraction-image">
                                 <img src="../assets/images/destinations/lezhe/castle.jpg" alt="Lezha Castle">
                                 <span class="attraction-type">Historic Fortress</span>
                                 <span class="altitude-indicator">186m</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
                             </div>
                             <div class="attraction-content">
                                 <h3>Lezha Castle</h3>
@@ -112,10 +133,30 @@
                         </article>
 
                         <!-- Skanderbeg Memorial -->
-                        <article class="attraction-card">
+                        <article class="attraction-card" data-gallery='[
+                            {
+                                "url": "../assets/images/destinations/lezhe/skanderbeg.jpg",
+                                "caption": "Skanderbeg Memorial Main View"
+                            },
+                            {
+                                "url": "../assets/images/destinations/lezhe/skanderbeg-2.jpg",
+                                "caption": "Memorial Interior"
+                            },
+                            {
+                                "url": "../assets/images/destinations/lezhe/skanderbeg-3.jpg",
+                                "caption": "Historical Artifacts"
+                            },
+                            {
+                                "url": "../assets/images/destinations/lezhe/skanderbeg-4.jpg",
+                                "caption": "Memorial Gardens"
+                            }
+                        ]'>
                             <div class="attraction-image">
                                 <img src="../assets/images/destinations/lezhe/skanderbeg.jpg" alt="Skanderbeg Memorial">
                                 <span class="attraction-type">Historical Site</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
                             </div>
                             <div class="attraction-content">
                                 <h3>Skanderbeg Memorial</h3>
@@ -129,10 +170,30 @@
                         </article>
 
                         <!-- Ancient Lissus -->
-                        <article class="attraction-card">
+                        <article class="attraction-card" data-gallery='[
+                            {
+                                "url": "../assets/images/destinations/lezhe/lissus.jpg",
+                                "caption": "Ancient Lissus Overview"
+                            },
+                            {
+                                "url": "../assets/images/destinations/lezhe/lissus-2.jpg",
+                                "caption": "Archaeological Ruins"
+                            },
+                            {
+                                "url": "../assets/images/destinations/lezhe/lissus-3.jpg",
+                                "caption": "Ancient Theater"
+                            },
+                            {
+                                "url": "../assets/images/destinations/lezhe/lissus-4.jpg",
+                                "caption": "Roman Artifacts"
+                            }
+                        ]'>
                             <div class="attraction-image">
                                 <img src="../assets/images/destinations/lezhe/lissus.jpg" alt="Ancient Lissus">
                                 <span class="attraction-type">Archaeological Site</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
                             </div>
                             <div class="attraction-content">
                                 <h3>Ancient Lissus</h3>
@@ -146,10 +207,30 @@
                         </article>
 
                         <!-- Kune-Vain Lagoon -->
-                        <article class="attraction-card">
+                        <article class="attraction-card" data-gallery='[
+                            {
+                                "url": "../assets/images/destinations/lezhe/lagoon.jpg",
+                                "caption": "Kune-Vain Lagoon Panorama"
+                            },
+                            {
+                                "url": "../assets/images/destinations/lezhe/lagoon-2.jpg",
+                                "caption": "Wetland Wildlife"
+                            },
+                            {
+                                "url": "../assets/images/destinations/lezhe/lagoon-3.jpg",
+                                "caption": "Nature Trails"
+                            },
+                            {
+                                "url": "../assets/images/destinations/lezhe/lagoon-4.jpg",
+                                "caption": "Bird Watching Spots"
+                            }
+                        ]'>
                             <div class="attraction-image">
                                 <img src="../assets/images/destinations/lezhe/lagoon.jpg" alt="Kune-Vain Lagoon">
                                 <span class="attraction-type">Nature Reserve</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
                             </div>
                             <div class="attraction-content">
                                 <h3>Kune-Vain Lagoon</h3>
@@ -540,5 +621,20 @@
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/destination-single.js"></script>
     <script src="../assets/js/lezhe-map.js"></script>
+    <div class="image-popup" id="imagePopup">
+        <span class="close-popup">&times;</span>
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3></h3>
+            </div>
+            <div class="popup-image-container">
+                <img src="" alt="" class="popup-image">
+                <button class="nav-btn prev-btn">&lt;</button>
+                <button class="nav-btn next-btn">&gt;</button>
+            </div>
+            <div class="popup-thumbnails"></div>
+        </div>
+    </div>
+    <script src="../assets/js/image-popup.js"></script>
 </body>
 </html>
