@@ -36,6 +36,27 @@ body {
     z-index: 1000;
 }
 
+/* Transparent header for home page */
+.header-transparent {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.header-transparent .nav-links a {
+    color: var(--white);
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.header-transparent .nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.header-transparent .mobile-menu-btn span {
+    background-color: var(--white);
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
@@ -112,9 +133,10 @@ body {
 
 /* Hero Section */
 .hero {
+    height: 600px;
+    min-height: 500px;
+    max-height: 600px;
     position: relative;
-    height: 100vh;
-    min-height: 600px;
     overflow: hidden;
 }
 
@@ -132,10 +154,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
     background-size: cover;
     background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    background-repeat: no-repeat;
+    object-fit: cover;
 }
 
 .hero-slide.active {
@@ -148,7 +172,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
@@ -157,7 +181,10 @@ body {
     z-index: 2;
     color: #fff;
     text-align: center;
-    padding-top: 200px;
+    padding-top: 180px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .hero-content h1 {
@@ -176,30 +203,42 @@ body {
 
 .hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.cta-button {
+/* Floating heart animation */
+.floating-heart {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-top: 20px;
     display: inline-block;
-    padding: 1rem 2.5rem;
-    background-color: var(--accent-color);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: floatingHeart 2s ease-in-out infinite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.cta-button:hover {
-    transform: translateY(-2px);
-    background-color: #ff825b;
+@keyframes floatingHeart {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.1);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
 }
 
 /* Responsive styles for hero section */
 @media (max-width: 768px) {
+    .hero {
+        height: 500px;
+        min-height: 400px;
+    }
+
+    .hero-content {
+        padding-top: 120px;
+    }
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
@@ -212,6 +251,14 @@ body {
         font-size: 1rem;
         padding: 0 20px;
     }
+}
+
+/* Ensure images maintain aspect ratio */
+.hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* Destinations Section */
