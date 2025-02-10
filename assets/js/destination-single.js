@@ -1,4 +1,50 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize map for single destination
+    function initDestinationMap() {
+        // Theth coordinates
+        const thethLocation = { lat: 42.3833, lng: 19.7667 };
+        
+        const map = new google.maps.Map(document.getElementById('destination-map'), {
+            zoom: 13,
+            center: thethLocation,
+            mapTypeId: 'terrain'
+        });
+
+        // Add marker for Theth
+        const marker = new google.maps.Marker({
+            position: thethLocation,
+            map: map,
+            title: 'Theth',
+            animation: google.maps.Animation.DROP
+        });
+
+        // Info window for Theth
+        const infoWindow = new google.maps.InfoWindow({
+            content: `
+                <div class="map-info-window">
+                    <h3>Theth</h3>
+                    <p>Mountain Village</p>
+                    <p>Elevation: 750m</p>
+                </div>
+            `
+        });
+
+        marker.addListener('click', () => {
+            infoWindow.open(map, marker);
+        });
+    }
+
+    // Initialize map if map element exists
+    if (document.getElementById('destination-map')) {
+        initDestinationMap();
+    }
+
+    // Handle weather alerts
+    const weatherAlert = document.querySelector('.weather-alert');
+    if (weatherAlert) {
+        weatherAlert.style.display = 'block';
+    }
+
     // Initialize map with Valbona coordinates
     function initMap() {
         const valbonaLocation = { lat: 42.4275, lng: 19.8961 };
