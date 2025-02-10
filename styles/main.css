@@ -93,15 +93,18 @@ body {
     }
 }
 
-/* Hero section styles */
+/* Hero Section */
 .hero {
-    position: relative;
     height: 100vh;
-    background-image: url('../assets/images/hero-bg.jpg');
+    background-image: url('../assets/images/hero-bg.jpg'); /* Corrected path */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    margin-top: 80px; /* To account for fixed header */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
 }
 
 .hero-overlay {
@@ -110,20 +113,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0.6)
-    );
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
-    color: var(--white);
-    text-align: center;
-    padding-top: 35vh;
+    z-index: 2;
     max-width: 800px;
-    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .hero-content h1 {
@@ -183,7 +180,7 @@ body {
 /* Destinations Section */
 .destinations {
     padding: 100px 0;
-    background-color: var(--secondary-color);
+    background-color: var(--white);
 }
 
 .section-header {
@@ -230,15 +227,15 @@ body {
 }
 
 .region-image.northern {
-    background-image: url('../assets/images/northern-region.jpg');
+    background-image: url('/assets/images/northern-region.jpg'); /* Absolute path */
 }
 
 .region-image.central {
-    background-image: url('../assets/images/central-region.jpg');
+    background-image: url('/assets/images/central-region.jpg'); /* Absolute path */
 }
 
 .region-image.southern {
-    background-image: url('../assets/images/southern-region.jpg');
+    background-image: url('/assets/images/southern-region.jpg'); /* Absolute path */
 }
 
 .region-content {
@@ -330,19 +327,27 @@ body {
 }
 
 .category-image.unesco {
-    background-image: url('../assets/images/unesco-sites.jpg');
+    background-image: url('/assets/images/unesco-sites.jpg');
 }
 
 .category-image.castles {
-    background-image: url('../assets/images/castles.jpg');
+    background-image: url('/assets/images/castles.jpg'); /* Absolute path */
 }
 
 .category-image.museums {
-    background-image: url('../assets/images/museums.jpg');
+    background-image: url('/assets/images/museums.jpg'); /* Absolute path */
 }
 
 .category-image.beaches {
-    background-image: url('../assets/images/beaches.jpg');
+    background-image: url('/assets/images/beaches.jpg'); /* Absolute path */
+}
+
+.category-image.parks {
+    background-image: url('../assets/images/parks.jpg');
+}
+
+.category-image.archaeology {
+    background-image: url('../assets/images/archaeology.jpg');
 }
 
 .category-content {
@@ -400,7 +405,7 @@ body {
 /* Experiences Section */
 .experiences {
     padding: 100px 0;
-    background-color: var(--secondary-color);
+    background-color: var(--white);
     position: relative;
 }
 
@@ -411,7 +416,6 @@ body {
     left: 0;
     right: 0;
     height: 100%;
-    background: url('../assets/images/pattern-bg.png') repeat;
     opacity: 0.1;
 }
 
@@ -450,10 +454,9 @@ body {
     padding: 20px;
 }
 
-.experience-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.experience-icon i {
+    font-size: 2rem;
+    color: var(--accent-color);
 }
 
 .experience-card h3 {
@@ -538,10 +541,9 @@ body {
     justify-content: center;
 }
 
-.advisor-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.advisor-icon i {
+    font-size: 1.8rem;
+    color: var(--accent-color);
 }
 
 .advisor-card h4 {
@@ -894,4 +896,9 @@ body {
 .advisor-card.reveal {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Remove the old img styles */
+.advisor-icon img {
+    display: none;
 } 
