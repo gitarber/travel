@@ -3,26 +3,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
-    let isMenuOpen = false;
+    const body = document.body;
 
-    function toggleMenu() {
-        isMenuOpen = !isMenuOpen;
-        mobileMenuBtn.classList.toggle('active');
-        navLinks.style.display = isMenuOpen ? 'flex' : 'none';
-        
-        if (isMenuOpen) {
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '80px';
-            navLinks.style.left = '0';
-            navLinks.style.right = '0';
-            navLinks.style.backgroundColor = 'var(--white)';
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.padding = '20px';
-            navLinks.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-        }
+    // Create overlay element
+    const overlay = document.createElement('div');
+    overlay.className = 'mobile-menu-overlay';
+    body.appendChild(overlay);
+
+    function toggleMobileMenu() {
+        navLinks.classList.toggle('mobile-active');
+        setTimeout(() => {
+            navLinks.classList.toggle('show');
+            overlay.classList.toggle('show');
+        }, 50);
+        body.style.overflow = body.style.overflow === 'hidden' ? '' : 'hidden';
     }
 
-    mobileMenuBtn.addEventListener('click', toggleMenu);
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            toggleMobileMenu();
+        }
+    });
 
     // Smooth Scrolling for Navigation Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -31,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 // Close mobile menu if open
-                if (isMenuOpen) {
-                    toggleMenu();
+                if (navLinks.classList.contains('mobile-active')) {
+                    toggleMobileMenu();
                 }
                 
                 window.scrollTo({
