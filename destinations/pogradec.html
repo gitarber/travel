@@ -249,8 +249,8 @@
                                 </div>
                             </div>
                             <div class="attraction-content">
-                                <h3>First Albanian School Museum</h3>
-                                <p>Historical site showcasing the beginnings of Albanian education and cultural renaissance.</p>
+                                <h3>Tushemisht</h3>
+                                <p>Tushemisht is beautiful and traditional architecture.</p>
                                 <ul class="attraction-details">
                                     <li><i class="fas fa-clock"></i> Hours: 9:00 - 17:00</li>
                                     <li><i class="fas fa-book"></i> Guided Tours Available</li>
@@ -350,7 +350,6 @@
                                         <li>City tours possible</li>
                                     </ul>
                                     <div class="contact-info">
-                                        <p>Taxi Services:</p>
                                         <div class="button-group">
                                             <button class="book-button">Call Taxi</button>
                                         </div>
@@ -370,12 +369,6 @@
                                         <li>Family-friendly routes</li>
                                     </ul>
                                     <div class="rental-rates">
-                                        <p>Rental Rates:</p>
-                                        <ul>
-                                            <li>2€/hour</li>
-                                            <li>10€/day</li>
-                                            <li>Guided tours from 15€</li>
-                                        </ul>
                                         <button class="book-button">Rent Bike</button>
                                     </div>
                                 </div>
@@ -508,9 +501,7 @@
     <!-- Related Destinations -->
     <section class="related-destinations">
         <div class="container">
-            <h2>Nearby Destinations</h2>
-            <p>Explore other beautiful destinations in the region</p>
-            
+            <h2>Nearby Destinations</h2>            
             <div class="related-grid">
                 <!-- Korça -->
                 <article class="related-card">
@@ -538,7 +529,7 @@
                     <div class="related-content">
                         <h3>Lin Peninsula</h3>
                         <p>Picturesque village with ancient mosaics and pristine beaches</p>
-                        <a href="lin.html" class="related-link">Explore <i class="fas fa-arrow-right"></i></a>
+                        <a href="pogradec.html" class="related-link">Explore <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
@@ -553,7 +544,7 @@
                     <div class="related-content">
                         <h3>Tushemisht</h3>
                         <p>Traditional village known for its water springs and restaurants</p>
-                        <a href="tushemisht.html" class="related-link">Explore <i class="fas fa-arrow-right"></i></a>
+                        <a href="pogradec.html" class="related-link">Explore <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
             </div>
@@ -613,33 +604,37 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbrlcFOKXQxkny7jTyglMq8IQrkiNMnGo&callback=initMap" async defer></script>
     <script>
         function initMap() {
             const pogradec = { lat: 40.9022, lng: 20.6525 };
-            const mapOptions = {
-                zoom: 13,
+            const map = new google.maps.Map(document.getElementById("destination-map"), {
+                zoom: 14,
                 center: pogradec,
-                mapTypeId: 'terrain',
+                mapTypeControl: true,
+                streetViewControl: true,
+                mapTypeId: google.maps.MapTypeId.TERRAIN,
                 styles: [
                     {
-                        featureType: 'landscape',
-                        elementType: 'geometry',
-                        stylers: [{ color: '#f5f5f5' }]
+                        featureType: "water",
+                        elementType: "geometry",
+                        stylers: [
+                            { color: "#93cfdf" },
+                            { lightness: 20 }
+                        ]
                     },
                     {
-                        featureType: 'water',
-                        elementType: 'geometry',
-                        stylers: [{ color: '#c9c9c9' }]
+                        featureType: "landscape",
+                        elementType: "geometry",
+                        stylers: [
+                            { color: "#f5f5f5" },
+                            { lightness: 20 }
+                        ]
                     }
                 ]
-            };
-            
-            const map = new google.maps.Map(
-                document.getElementById("destination-map"),
-                mapOptions
-            );
+            });
 
+            // Add marker
             const marker = new google.maps.Marker({
                 position: pogradec,
                 map: map,
@@ -647,15 +642,24 @@
                 animation: google.maps.Animation.DROP
             });
 
-            const infoWindow = new google.maps.InfoWindow({
-                content: "<h3>Pogradec</h3><p>Pearl of Lake Ohrid</p>"
+            // Add info window
+            const infowindow = new google.maps.InfoWindow({
+                content: `
+                    <div style="padding: 10px;">
+                        <h3 style="margin: 0 0 5px 0;">Pogradec</h3>
+                        <p style="margin: 0;">Pearl of Lake Ohrid</p>
+                    </div>
+                `
             });
 
+            // Open info window when marker is clicked
             marker.addListener("click", () => {
-                infoWindow.open(map, marker);
+                infowindow.open(map, marker);
             });
+
+            // Open info window by default
+            infowindow.open(map, marker);
         }
-        window.initMap = initMap;
     </script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/destination-single.js"></script>

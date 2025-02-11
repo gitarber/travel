@@ -695,7 +695,63 @@
 
     <!-- Scripts -->
     <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbrlcFOKXQxkny7jTyglMq8IQrkiNMnGo"></script>
+    <script>
+        function initMap() {
+            const theth = { lat: 42.3833, lng: 19.7667 };
+            const map = new google.maps.Map(document.getElementById("destination-map"), {
+                zoom: 14,
+                center: theth,
+                mapTypeControl: true,
+                streetViewControl: true,
+                mapTypeId: google.maps.MapTypeId.TERRAIN,
+                styles: [
+                    {
+                        featureType: "water",
+                        elementType: "geometry",
+                        stylers: [
+                            { color: "#93cfdf" },
+                            { lightness: 20 }
+                        ]
+                    },
+                    {
+                        featureType: "landscape",
+                        elementType: "geometry",
+                        stylers: [
+                            { color: "#f5f5f5" },
+                            { lightness: 20 }
+                        ]
+                    }
+                ]
+            });
+
+            // Add marker
+            const marker = new google.maps.Marker({
+                position: theth,
+                map: map,
+                title: "Theth",
+                animation: google.maps.Animation.DROP
+            });
+
+            // Add info window
+            const infowindow = new google.maps.InfoWindow({
+                content: `
+                    <div style="padding: 10px;">
+                        <h3 style="margin: 0 0 5px 0;">Theth</h3>
+                        <p style="margin: 0;">Pearl of the Albanian Alps</p>
+                    </div>
+                `
+            });
+
+            // Open info window when marker is clicked
+            marker.addListener("click", () => {
+                infowindow.open(map, marker);
+            });
+
+            // Open info window by default
+            infowindow.open(map, marker);
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbrlcFOKXQxkny7jTyglMq8IQrkiNMnGo&callback=initMap" async defer></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/destination-single.js"></script>
     <script src="../assets/js/image-popup.js"></script>
