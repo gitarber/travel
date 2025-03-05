@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durrës - Gateway to the Adriatic | Visit Albania</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/destination-single.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/image-popup.css">
+</head>
+<body>
+    <div class="image-popup" id="imagePopup">
+        <span class="close-popup">&times;</span>
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3></h3>
+            </div>
+            <div class="popup-image-container">
+                <img src="" alt="" class="popup-image">
+                <button class="nav-btn prev-btn">&lt;</button>
+                <button class="nav-btn next-btn">&gt;</button>
+            </div>
+            <div class="popup-thumbnails"></div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="/assets/images/logo.jpg" alt="Albania Visit Logo">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../destinations.html" class="active">Destinations</a></li>
+                    <li><a href="../index.html#landmarks">Landmarks</a></li>
+                    <li><a href="../index.html#experiences">Experiences</a></li>
+                    <li><a href="../index.html#advisor">Advisor</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../destinations.html">Destinations</a>
+                <span>/</span>
+                <span>Durrës</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="destination-hero" style="background-image: url('../assets/images/destinations/durres.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Durrës</h1>
+                <p>Gateway to the Adriatic</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Coastal City on the Adriatic Sea</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Best Time to Visit</h3>
+                    <p>May to September</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Recommended Stay</h3>
+                    <p>2-3 Days</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-star"></i>
+                    <h3>Highlights</h3>
+                    <p>Beaches & Roman Ruins</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="destination-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-content">
+                    <h2>About Durrës</h2>
+                    <div class="content-block">
+                        <p>Durrës is one of Albania's oldest cities, known for its rich history and beautiful beaches. It features a blend of ancient Roman ruins and modern attractions, making it a popular destination for tourists.</p>
+                        <p>The city is famous for its Roman Amphitheatre, which is one of the largest in the Balkans, and offers a glimpse into the region's historical significance.</p>
+                    </div>
+
+                    <h2>What to See</h2>
+                    <div class="attractions-grid">
+                        <article class="attraction-card">
+                            <div class="attraction-image">
+                                <img src="../assets/images/destinations/durres/amphitheatre.jpg" alt="Roman Amphitheatre">
+                                <span class="attraction-type">Historical Site</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
+                            </div>
+                            <div class="attraction-content">
+                                <h3>Roman Amphitheatre</h3>
+                                <p>A remarkable ancient structure that once hosted gladiatorial games and performances.</p>
+                                <ul class="attraction-details">
+                                    <li><i class="fas fa-clock"></i> Open daily</li>
+                                    <li><i class="fas fa-ticket-alt"></i> Entry: 200 LEK</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="attraction-card">
+                            <div class="attraction-image">
+                                <img src="../assets/images/destinations/durres/beach.jpg" alt="Durrës Beach">
+                                <span class="attraction-type">Beach</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
+                            </div>
+                            <div class="attraction-content">
+                                <h3>Durrës Beach</h3>
+                                <p>Enjoy the sun and sea at one of the most popular beaches in Albania.</p>
+                                <ul class="attraction-details">
+                                    <li><i class="fas fa-sun"></i> Sunbeds available</li>
+                                    <li><i class="fas fa-utensils"></i> Beach bars and restaurants</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="attraction-card">
+                            <div class="attraction-image">
+                                <img src="../assets/images/destinations/durres/museum.jpg" alt="Archaeological Museum">
+                                <span class="attraction-type">Museum</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
+                            </div>
+                            <div class="attraction-content">
+                                <h3>Archaeological Museum</h3>
+                                <p>Home to a vast collection of artifacts from the Roman and Byzantine periods.</p>
+                                <ul class="attraction-details">
+                                    <li><i class="fas fa-clock"></i> Hours: 9:00 - 17:00</li>
+                                    <li><i class="fas fa-ticket-alt"></i> Entry: 300 LEK</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="attraction-card">
+                            <div class="attraction-image">
+                                <img src="../assets/images/destinations/durres/castle.jpg" alt="Durrës Castle">
+                                <span class="attraction-type">Historical Site</span>
+                                <div class="view-gallery">
+                                    <i class="fas fa-images"></i> View Gallery
+                                </div>
+                            </div>
+                            <div class="attraction-content">
+                                <h3>Durrës Castle</h3>
+                                <p>A historical site with panoramic views of the city.</p>
+                                <ul class="attraction-details">
+                                    <li><i class="fas fa-clock"></i> Open daily</li>
+                                    <li><i class="fas fa-ticket-alt"></i> Entry: 150 LEK</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+
+                    <h2>Local Experiences</h2>
+                    <div class="experiences-grid">
+                        <div class="experience-card">
+                            <i class="fas fa-utensils"></i>
+                            <h3>Local Cuisine</h3>
+                            <p>Try fresh seafood and traditional Albanian dishes at local restaurants.</p>
+                        </div>
+                        <div class="experience-card">
+                            <i class="fas fa-beach"></i>
+                            <h3>Beach Activities</h3>
+                            <p>Engage in water sports and beach games along the Adriatic coast.</p>
+                        </div>
+                        <div class="experience-card">
+                            <i class="fas fa-camera"></i>
+                            <h3>Photography Tours</h3>
+                            <p>Capture stunning sunsets and vibrant city life.</p>
+                        </div>
+                        <div class="experience-card">
+                            <i class="fas fa-users"></i>
+                            <h3>Cultural Tours</h3>
+                            <p>Explore the rich history and culture of Durrës with guided tours.</p>
+                        </div>
+                    </div>
+
+                    <h2>Getting Around</h2>
+                    <div class="transport-section">
+                        <div class="transport-options">
+                            <div class="transport-card">
+                                <i class="fas fa-bus"></i>
+                                <h3>Public Transport</h3>
+                                <div class="transport-details">
+                                    <p>Regular buses connect Durrës with Tirana and other cities.</p>
+                                </div>
+                            </div>
+                            <div class="transport-card">
+                                <i class="fas fa-taxi"></i>
+                                <h3>Taxis</h3>
+                                <div class="transport-details">
+                                    <p>Available throughout the city for convenient travel.</p>
+                                </div>
+                            </div>
+                            <div class="transport-card">
+                                <i class="fas fa-car"></i>
+                                <h3>Car Rentals</h3>
+                                <div class="transport-details">
+                                    <p>Rent a car for more flexibility in exploring the region.</p>
+                                </div>
+                            </div>
+                            <div class="transport-card">
+                                <i class="fas fa-bicycle"></i>
+                                <h3>Bicycle Rentals</h3>
+                                <div class="transport-details">
+                                    <p>Options for renting bicycles to explore the city.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Where to Stay</h2>
+                    <div class="accommodations-grid">
+                        <article class="accommodation-card">
+                            <div class="accommodation-image">
+                                <img src="../assets/images/destinations/durres/hotel1.jpg" alt="Hotel Durrës">
+                                <span class="accommodation-type">Hotel</span>
+                            </div>
+                            <div class="accommodation-content">
+                                <h3>Hotel Durrës</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>Luxury hotel with stunning sea views and modern amenities.</p>
+                                <ul class="amenities">
+                                    <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                                    <li><i class="fas fa-parking"></i> Parking</li>
+                                    <li><i class="fas fa-spa"></i> Spa Services</li>
+                                </ul>
+                                <div class="price">From €80/night</div>
+                                <a href="#" class="book-button">Check Availability</a>
+                            </div>
+                        </article>
+
+                        <article class="accommodation-card">
+                            <div class="accommodation-image">
+                                <img src="../assets/images/destinations/durres/guesthouse.jpg" alt="Guesthouse Durrës">
+                                <span class="accommodation-type">Guesthouse</span>
+                            </div>
+                            <div class="accommodation-content">
+                                <h3>Guesthouse Durrës</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>Cozy guesthouse with a homely atmosphere and local cuisine.</p>
+                                <ul class="amenities">
+                                    <li><i class="fas fa-utensils"></i> Breakfast Included</li>
+                                    <li><i class="fas fa-coffee"></i> Coffee Shop</li>
+                                </ul>
+                                <div class="price">From €30/night</div>
+                                <a href="#" class="book-button">Check Availability</a>
+                            </div>
+                        </article>
+
+                        <article class="accommodation-card">
+                            <div class="accommodation-image">
+                                <img src="../assets/images/destinations/durres/beachfront.jpg" alt="Beachfront Hotel">
+                                <span class="accommodation-type">Beachfront Hotel</span>
+                            </div>
+                            <div class="accommodation-content">
+                                <h3>Beachfront Hotel</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>A hotel with direct access to the beach.</p>
+                                <ul class="amenities">
+                                    <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                                    <li><i class="fas fa-parking"></i> Parking</li>
+                                </ul>
+                                <div class="price">From €90/night</div>
+                                <a href="#" class="book-button">Check Availability</a>
+                            </div>
+                        </article>
+
+                        <article class="accommodation-card">
+                            <div class="accommodation-image">
+                                <img src="../assets/images/destinations/durres/hostel.jpg" alt="Budget Hostel">
+                                <span class="accommodation-type">Budget Hostel</span>
+                            </div>
+                            <div class="accommodation-content">
+                                <h3>Budget Hostel</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>A budget-friendly option for travelers.</p>
+                                <ul class="amenities">
+                                    <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                                    <li><i class="fas fa-coffee"></i> Breakfast Included</li>
+                                </ul>
+                                <div class="price">From €15/night</div>
+                                <a href="#" class="book-button">Check Availability</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="widget weather-widget">
+                        <h3>Current Weather</h3>
+                        <div class="weather-info">
+                            <div style="text-align: center;">
+                                <i class="fas fa-sun" style="color: #FFD700; font-size: 3rem;"></i>
+                                <span style="font-size: 3rem; margin-left: 10px;">25°C</span>
+                            </div>
+                            <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0;">
+                                <div>
+                                    <i class="fas fa-tint"></i> Humidity: 60%
+                                </div>
+                                <div>
+                                    <i class="fas fa-wind"></i> Wind: 10 km/h
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="widget map-widget">
+                        <h3>Location</h3>
+                        <div id="destination-map"></div>
+                        <a href="https://goo.gl/maps/durres" class="directions-link" target="_blank">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                    </div>
+
+                    <div class="widget practical-info">
+                        <h3>Practical Information</h3>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <i class="fas fa-signal"></i>
+                                <div class="info-content">
+                                    <h4>Internet Access</h4>
+                                    <p>WiFi available in most hotels and cafes</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <div class="info-content">
+                                    <h4>Payment</h4>
+                                    <p>Cash and card accepted</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <div class="info-content">
+                                    <h4>Safety Tips</h4>
+                                    <p>Be aware of your surroundings and keep your belongings secure.</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <div class="info-content">
+                                    <h4>Local Currency</h4>
+                                    <p>Albanian Lek (ALL) is the local currency. Exchange services are available.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="widget booking-widget">
+                        <h3>Book a Guide</h3>
+                        <div class="tour-options">
+                            <div class="tour-option">
+                                <h4>Historical City Tour</h4>
+                                <p>3 hours • From €25/person</p>
+                                <button class="book-button">Book Now</button>
+                            </div>
+                            <div class="tour-option">
+                                <h4>Beach Day Experience</h4>
+                                <p>Full day • From €40/person</p>
+                                <button class="book-button">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-destinations">
+        <div class="container">
+            <h2>Nearby Destinations</h2>
+            <div class="related-grid">
+                <article class="related-card">
+                    <div class="related-image">
+                        <img src="../assets/images/destinations/tirana.jpg" alt="Tirana">
+                        <div class="related-overlay">
+                            <span>30 minutes by car</span>
+                        </div>
+                    </div>
+                    <div class="related-content">
+                        <h3>Tirana</h3>
+                        <p>Albania's vibrant capital city</p>
+                        <a href="tirana.html" class="related-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="related-card">
+                    <div class="related-image">
+                        <img src="../assets/images/destinations/berat.jpg" alt="Berat">
+                        <div class="related-overlay">
+                            <span>1.5 hours by car</span>
+                        </div>
+                    </div>
+                    <div class="related-content">
+                        <h3>Berat</h3>
+                        <p>The city of a thousand windows</p>
+                        <a href="berat.html" class="related-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../destinations.html">Destinations</a></li>
+                        <li><a href="../index.html#landmarks">Landmarks</a></li>
+                        <li><a href="../index.html#experiences">Experiences</a></li>
+                        <li><a href="../index.html#advisor">Advisor</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="mailto:info@visitalbania.com">info@visitalbania.com</a></li>
+                        <li class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for travel updates and special offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="legal-links">
+                    <a href="../privacy-policy.html">Privacy Policy</a>
+                    <a href="../terms-of-service.html">Terms of Service</a>
+                    <a href="../cookie-policy.html">Cookie Policy</a>
+                </div>
+                <p class="copyright">&copy; 2024 Visit Albania. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <script>
+        function initMap() {
+            const durres = { lat: 41.3234, lng: 19.4560 };
+            const map = new google.maps.Map(document.getElementById("destination-map"), {
+                zoom: 14,
+                center: durres,
+                mapTypeControl: true,
+                streetViewControl: true,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+            });
+
+            const marker = new google.maps.Marker({
+                position: durres,
+                map: map,
+                title: "Durrës",
+                animation: google.maps.Animation.DROP
+            });
+
+            const infowindow = new google.maps.InfoWindow({
+                content: `<div style='padding: 10px;'><h3>Durrës</h3><p>Gateway to the Adriatic</p></div>`
+            });
+
+            marker.addListener("click", () => {
+                infowindow.open(map, marker);
+            });
+
+            infowindow.open(map, marker);
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbrlcFOKXQxkny7jTyglMq8IQrkiNMnGo&callback=initMap" async defer></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/destination-single.js"></script>
+    <script src="../assets/js/image-popup.js"></script>
+</body>
+</html> 
