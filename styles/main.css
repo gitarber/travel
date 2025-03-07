@@ -446,6 +446,9 @@ body {
     color: inherit;
     display: block;
     transition: transform 0.3s ease, color 0.3s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
 }
 
 .destinations-list li a:hover {
