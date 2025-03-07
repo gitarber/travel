@@ -425,18 +425,41 @@ body {
 }
 
 .destinations-list li {
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
 }
 
 .destinations-list h4 {
-    color: var(--primary-color);
     font-size: 1.1rem;
-    margin-bottom: 5px;
+    margin-bottom: 0.3rem;
+    color: var(--primary-color);
 }
 
 .destinations-list p {
-    color: var(--text-color);
     font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.destinations-list li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.destinations-list li a:hover {
+    color: var(--accent-color);
+    transform: translateX(10px);
+}
+
+.destinations-list li a h4 {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.destinations-list li a:hover h4 {
+    color: var(--accent-color);
 }
 
 /* Responsive styles for destinations section */
