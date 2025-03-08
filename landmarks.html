@@ -865,17 +865,39 @@
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
                 
-                const filterType = button.textContent.toLowerCase();
+                const filterType = button.textContent.trim().toLowerCase();
                 const cards = document.querySelectorAll('.landmark-card');
                 
                 cards.forEach(card => {
                     const type = card.querySelector('.landmark-type').textContent.toLowerCase();
                     const meta = card.querySelector('.landmark-meta').textContent.toLowerCase();
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const details = card.querySelector('.landmark-details').textContent.toLowerCase();
                     
-                    if (filterType === 'all' || type.includes(filterType) || meta.includes(filterType)) {
+                    if (filterType === 'all') {
                         card.style.display = 'block';
                     } else {
-                        card.style.display = 'none';
+                        // Check for specific categories
+                        const showCard = (() => {
+                            switch(filterType) {
+                                case 'unesco heritage sites':
+                                    return meta.includes('unesco') || type.includes('unesco');
+                                case 'castles & fortresse':
+                                    return type.includes('castle') || meta.includes('fortress') || title.includes('castle');
+                                case 'historical sites':
+                                    return type.includes('historical') || meta.includes('historical') || type.includes('museum');
+                                case 'beaches':
+                                    return type.includes('coastal') || meta.includes('beach') || title.includes('riviera');
+                                case 'national parks':
+                                    return type.includes('national park') || title.includes('national park');
+                                case 'archaeological site':
+                                    return type.includes('archaeological') || meta.includes('archaeological');
+                                default:
+                                    return type.includes(filterType) || meta.includes(filterType);
+                            }
+                        })();
+                        
+                        card.style.display = showCard ? 'block' : 'none';
                     }
                 });
             });
