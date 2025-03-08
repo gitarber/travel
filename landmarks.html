@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albanian Landmarks - Visit Albania</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .landmarks-hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url('assets/images/landmarks/hero-landmarks.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: -80px;
+            padding-top: 120px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .search-section {
+            background-color: var(--white);
+            padding: 3rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .filters-container {
+            position: relative;
+            margin: 0 -1rem;
+            padding: 0 1rem;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 1.2rem 2rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .landmarks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .landmark-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .landmark-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .landmark-image {
+            position: relative;
+            height: 200px;
+        }
+
+        .landmark-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .landmark-type {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .landmark-content {
+            padding: 20px;
+        }
+
+        .landmark-content h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .landmark-content p {
+            color: var(--text-color);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .landmark-details {
+            list-style: none;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding-top: 15px;
+        }
+
+        .landmark-details li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .landmark-details i {
+            color: var(--accent-color);
+        }
+
+        .landmark-link {
+            display: inline-block;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+
+        .landmark-link:hover {
+            text-decoration: underline;
+        }
+
+        .filters {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            background: var(--white);
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .filter-btn:hover {
+            background: var(--accent-color);
+            color: var(--white);
+            border-color: var(--accent-color);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-color);
+            color: var(--white);
+            border-color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .landmarks-hero {
+                height: 60vh;
+                padding-top: 100px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .search-section {
+                padding: 2rem 0;
+            }
+
+            .filters-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none; /* Firefox */
+                -ms-overflow-style: none; /* IE and Edge */
+                padding: 0.5rem 1rem;
+                margin: 0 -1rem;
+            }
+
+            .filters-container::-webkit-scrollbar {
+                display: none; /* Chrome, Safari, Opera */
+            }
+
+            .filters {
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                padding-bottom: 0.5rem;
+                width: max-content;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .landmarks-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="./assets/images/logo.jpg" alt="Albania Visit Logo">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="regions.html">Destinations</a></li>
+                    <li><a href="landmarks.html" class="active">Landmarks</a></li>
+                    <li><a href="index.html#experiences">Experiences</a></li>
+                    <li><a href="index.html#advisor">Advisor</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="landmarks-hero">
+        <div class="hero-content">
+            <h1>Discover Albania's Historic Landmarks</h1>
+            <p>Explore castles, archaeological sites, and cultural monuments that tell Albania's rich history</p>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="search-section">
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="Search Albanian landmarks...">
+            <div class="filters-container">
+                <div class="filters">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Castles</button>
+                    <button class="filter-btn">Archaeological Sites</button>
+                    <button class="filter-btn">Religious Sites</button>
+                    <button class="filter-btn">Museums</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Landmarks Grid -->
+    <main class="landmarks-grid">
+        <!-- Butrint -->
+        <article class="landmark-card">
+            <div class="landmark-image">
+                <img src="assets/images/landmarks/butrint.jpg" alt="Butrint Archaeological Site">
+                <div class="landmark-type">Archaeological Site</div>
+            </div>
+            <div class="landmark-content">
+                <h3>Butrint Archaeological Site</h3>
+                <div class="landmark-meta">
+                    <span>Ancient Site</span>
+                    <span>UNESCO Heritage</span>
+                </div>
+                <p>Ancient Greek and Roman city, featuring remarkable amphitheater, baptistery, and basilica ruins.</p>
+                <ul class="landmark-details">
+                    <li><i class="fas fa-theater-masks"></i> Ancient Theater</li>
+                    <li><i class="fas fa-bath"></i> Roman Baths</li>
+                    <li><i class="fas fa-church"></i> Ancient Basilica</li>
+                    <li><i class="fas fa-landmark"></i> Museum</li>
+                </ul>
+                <a href="landmarks/butrint.html" class="landmark-link">Explore Butrint</a>
+            </div>
+        </article>
+
+        <!-- Kruja Castle -->
+        <article class="landmark-card">
+            <div class="landmark-image">
+                <img src="assets/images/landmarks/kruja-castle.jpg" alt="Kruja Castle">
+                <div class="landmark-type">Medieval Castle</div>
+            </div>
+            <div class="landmark-content">
+                <h3>Kruja Castle</h3>
+                <div class="landmark-meta">
+                    <span>Historical Fortress</span>
+                    <span>National Symbol</span>
+                </div>
+                <p>Historic castle and national symbol, home to the Skanderbeg Museum and traditional old bazaar.</p>
+                <ul class="landmark-details">
+                    <li><i class="fas fa-museum"></i> Skanderbeg Museum</li>
+                    <li><i class="fas fa-store"></i> Old Bazaar</li>
+                    <li><i class="fas fa-archway"></i> Ethnographic Museum</li>
+                    <li><i class="fas fa-mountain"></i> Panoramic Views</li>
+                </ul>
+                <a href="landmarks/kruja.html" class="landmark-link">Explore Kruja Castle</a>
+            </div>
+        </article>
+
+        <!-- Berat Castle -->
+        <article class="landmark-card">
+            <div class="landmark-image">
+                <img src="assets/images/landmarks/berat-castle.jpg" alt="Berat Castle">
+                <div class="landmark-type">UNESCO Heritage</div>
+            </div>
+            <div class="landmark-content">
+                <h3>Berat Castle</h3>
+                <div class="landmark-meta">
+                    <span>Living Castle</span>
+                    <span>Religious Complex</span>
+                </div>
+                <p>One of the oldest inhabited castles in the world, featuring Byzantine churches and Ottoman mosques.</p>
+                <ul class="landmark-details">
+                    <li><i class="fas fa-church"></i> Byzantine Churches</li>
+                    <li><i class="fas fa-mosque"></i> Ottoman Mosques</li>
+                    <li><i class="fas fa-palette"></i> Onufri Museum</li>
+                    <li><i class="fas fa-eye"></i> City Views</li>
+                </ul>
+                <a href="landmarks/berat.html" class="landmark-link">Explore Berat Castle</a>
+            </div>
+        </article>
+
+        <!-- Rozafa Castle -->
+        <article class="landmark-card">
+            <div class="landmark-image">
+                <img src="assets/images/landmarks/rozafa-castle.jpg" alt="Rozafa Castle">
+                <div class="landmark-type">Historical Castle</div>
+            </div>
+            <div class="landmark-content">
+                <h3>Rozafa Castle</h3>
+                <div class="landmark-meta">
+                    <span>Ancient Fortress</span>
+                    <span>Scenic Views</span>
+                </div>
+                <p>Ancient castle with stunning views of Shkodër, Lake Skadar, and three converging rivers.</p>
+                <ul class="landmark-details">
+                    <li><i class="fas fa-museum"></i> Castle Museum</li>
+                    <li><i class="fas fa-fort-awesome"></i> Ancient Walls</li>
+                    <li><i class="fas fa-water"></i> Lake Views</li>
+                    <li><i class="fas fa-book"></i> Historic Legend</li>
+                </ul>
+                <a href="landmarks/rozafa.html" class="landmark-link">Explore Rozafa Castle</a>
+            </div>
+        </article>
+
+        <!-- Apollonia -->
+        <article class="landmark-card">
+            <div class="landmark-image">
+                <img src="assets/images/landmarks/apollonia.jpg" alt="Apollonia Archaeological Park">
+                <div class="landmark-type">Archaeological Site</div>
+            </div>
+            <div class="landmark-content">
+                <h3>Apollonia Archaeological Park</h3>
+                <div class="landmark-meta">
+                    <span>Ancient Greek</span>
+                    <span>Cultural Site</span>
+                </div>
+                <p>Ancient Greek colony featuring a remarkable archaeological museum and monastery.</p>
+                <ul class="landmark-details">
+                    <li><i class="fas fa-theater-masks"></i> Ancient Theater</li>
+                    <li><i class="fas fa-landmark"></i> Museum</li>
+                    <li><i class="fas fa-church"></i> Byzantine Monastery</li>
+                    <li><i class="fas fa-columns"></i> Roman Ruins</li>
+                </ul>
+                <a href="landmarks/apollonia.html" class="landmark-link">Explore Apollonia</a>
+            </div>
+        </article>
+
+        <!-- Et'hem Bey Mosque -->
+        <article class="landmark-card">
+            <div class="landmark-image">
+                <img src="assets/images/landmarks/ethem-bey-mosque.jpg" alt="Et'hem Bey Mosque">
+                <div class="landmark-type">Religious Site</div>
+            </div>
+            <div class="landmark-content">
+                <h3>Et'hem Bey Mosque</h3>
+                <div class="landmark-meta">
+                    <span>Ottoman Architecture</span>
+                    <span>Artistic Heritage</span>
+                </div>
+                <p>Beautiful mosque in Tirana's center, known for its frescoes and detailed architecture.</p>
+                <ul class="landmark-details">
+                    <li><i class="fas fa-paint-brush"></i> Unique Frescoes</li>
+                    <li><i class="fas fa-mosque"></i> Ottoman Design</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Central Location</li>
+                    <li><i class="fas fa-star"></i> Cultural Symbol</li>
+                </ul>
+                <a href="landmarks/ethem-bey.html" class="landmark-link">Explore Et'hem Bey Mosque</a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Main Navigation -->
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="regions.html">Destinations</a></li>
+                        <li><a href="landmarks.html">Landmarks</a></li>
+                        <li><a href="index.html#experiences">Experiences</a></li>
+                        <li><a href="index.html#advisor">Advisor</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="mailto:info@visitalbania.com">info@visitalbania.com</a></li>
+                        <li class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for travel updates and special offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="footer-bottom">
+                <div class="legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="cookie-policy.html">Cookie Policy</a>
+                </div>
+                <p class="copyright">&copy; 2024 Visit Albania. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Replace placeholder Font Awesome with official CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTjPqvDg5iGrpGzWpN+SGKKZRyL44CpAhbPtKhXrWdi8UNJdkumR3yvCnVqtSuoMw2pr0jKYWpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // Search functionality
+        const searchBox = document.querySelector('.search-box');
+        searchBox.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.landmark-card');
+            
+            cards.forEach(card => {
+                const title = card.querySelector('.landmark-title').textContent.toLowerCase();
+                const location = card.querySelector('.landmark-location').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || location.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Filter buttons functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                const filterType = button.textContent.toLowerCase();
+                const cards = document.querySelectorAll('.landmark-card');
+                
+                cards.forEach(card => {
+                    const meta = card.querySelector('.landmark-meta').textContent.toLowerCase();
+                    if (filterType === 'all' || meta.includes(filterType)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

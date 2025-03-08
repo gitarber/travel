@@ -11,6 +11,22 @@
     <link rel="stylesheet" href="../styles/image-popup.css">
 </head>
 <body>
+    <!-- Image Popup -->
+    <div class="image-popup" id="imagePopup">
+        <span class="close-popup">&times;</span>
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3></h3>
+            </div>
+            <div class="popup-image-container">
+                <img src="" alt="" class="popup-image">
+                <button class="nav-btn prev-btn">&lt;</button>
+                <button class="nav-btn next-btn">&gt;</button>
+            </div>
+            <div class="popup-thumbnails"></div>
+        </div>
+    </div>
+    
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -97,7 +113,7 @@
                         <!-- Skanderbeg Square -->
                         <article class="attraction-card" data-gallery='[
                             {
-                                "url": "../assets/images/destinations/tirana/1.jpg",
+                                "url": "../assets/images/destinations/tirana/skanderbeg-1.jpg",
                                 "caption": "Skanderbeg Square"
                             },
                             {
@@ -107,10 +123,14 @@
                             {
                                 "url": "../assets/images/destinations/tirana/skanderbeg-3.jpg",
                                 "caption": "Evening View"
+                            },
+                            {
+                                "url": "../assets/images/destinations/tirana/skanderbeg-4.jpg",
+                                "caption": "Skanderbeg Square"
                             }
                         ]'>
                             <div class="attraction-image">
-                                <img src="../assets/images/destinations/tirana/skanderbeg.jpg" alt="Skanderbeg Square">
+                                <img src="../assets/images/destinations/tirana/skanderbeg-1.jpg" alt="Skanderbeg Square">
                                 <span class="attraction-type">City Center</span>
                                 <div class="view-gallery">
                                     <i class="fas fa-images"></i> View Gallery
