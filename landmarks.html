@@ -399,18 +399,20 @@
                     </a>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="regions.html">Destinations</a></li>
+                    <li><a href="regions.html">Regions</a></li>
                     <li><a href="landmarks.html" class="active">Landmarks</a></li>
                     <li><a href="index.html#experiences">Experiences</a></li>
                     <li><a href="index.html#advisor">Advisor</a></li>
                 </ul>
-                <button class="mobile-menu-btn">
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
             </nav>
         </div>
+        <!-- Add mobile menu overlay -->
+        <div class="mobile-menu-overlay"></div>
     </header>
 
     <!-- Hero Section -->
@@ -777,6 +779,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" 
     integrity="sha512-GWzVrcGlo0TxTjPqvDg5iGrpGzWpN+SGKKZRyL44CpAhbPtKhXrWdi8UNJdkumR3yvCnVqtSuoMw2pr0jKYWpQ==" 
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- Add main.js -->
+    <script src="assets/js/main.js"></script>
+    
     <script>
         // Landmark data for search and suggestions
         const landmarks = [
