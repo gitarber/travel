@@ -127,83 +127,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // Video Slider Functionality
-    const slides = document.querySelectorAll('.hero-slide');
-    const videos = [
-        document.getElementById('hero-video-1'),
-        document.getElementById('hero-video-2')
-    ];
-    let currentSlide = 0;
-    let isTransitioning = false;
-    const slideDuration = 5000; // 5 seconds per slide
+    // Video Slider Functionality for 3 looping videos
+    const video1 = document.getElementById('hero-video-1');
+    const video2 = document.getElementById('hero-video-2');
+    const video3 = document.getElementById('hero-video-3');
+    const slide1 = document.getElementById('slide-1');
+    const slide2 = document.getElementById('slide-2');
+    const slide3 = document.getElementById('slide-3');
 
-    console.log('Initializing video slider...');
+    // Preload all videos
+    video1.load();
+    video2.load();
+    video3.load();
 
-    // Initialize videos
-    videos.forEach((video, index) => {
-        if (video) {
-            video.addEventListener('loadedmetadata', function() {
-                console.log(`Video ${index + 1} loaded`);
-                video.currentTime = 0;
-                if (index === 0) {
-                    console.log('Starting first video');
-                    video.play();
-                }
-            });
-
-            video.addEventListener('timeupdate', function() {
-                if (video.currentTime >= 5 && !isTransitioning) {
-                    console.log(`Video ${index + 1} reached 5 seconds`);
-                    nextSlide();
-                }
-            });
-
-            video.addEventListener('error', function(error) {
-                console.error(`Error with video ${index + 1}:`, error);
-            });
-        }
-    });
-
-    // Function to transition to next slide
-    function nextSlide() {
-        if (isTransitioning) {
-            console.log('Transition already in progress');
-            return;
-        }
-        isTransitioning = true;
-        console.log(`Transitioning from slide ${currentSlide + 1}`);
-
-        const nextIndex = (currentSlide + 1) % slides.length;
-        console.log(`Transitioning to slide ${nextIndex + 1}`);
-        
-        // Fade out current slide
-        slides[currentSlide].classList.remove('active');
-        slides[currentSlide].classList.add('fade-out');
-        
-        // Stop current video
-        videos[currentSlide].pause();
-        videos[currentSlide].currentTime = 0;
-        
-        // Fade in next slide
-        slides[nextIndex].classList.add('active');
-        slides[nextIndex].classList.remove('fade-out');
-        
-        // Play next video
-        videos[nextIndex].currentTime = 0;
-        videos[nextIndex].play().then(() => {
-            console.log(`Video ${nextIndex + 1} started playing`);
-            currentSlide = nextIndex;
-            isTransitioning = false;
-        }).catch(error => {
-            console.error('Error playing video:', error);
-            isTransitioning = false;
-        });
+    // Helper to instantly show one slide and hide the others
+    function showSlide(slideToShow, ...slidesToHide) {
+        slideToShow.style.display = 'block';
+        slidesToHide.forEach(slide => slide.style.display = 'none');
     }
 
-    // Start the carousel after first video is loaded
-    videos[0].addEventListener('play', function() {
-        console.log('First video started playing, setting up transition');
+    // When video1 ends, show video2 instantly
+    video1.addEventListener('ended', function () {
+        showSlide(slide2, slide1, slide3);
+        video2.currentTime = 0;
+        video2.play();
     });
+
+    // When video2 ends, show video3 instantly
+    video2.addEventListener('ended', function () {
+        showSlide(slide3, slide1, slide2);
+        video3.currentTime = 0;
+        video3.play();
+    });
+
+    // When video3 ends, show video1 instantly (loop)
+    video3.addEventListener('ended', function () {
+        showSlide(slide1, slide2, slide3);
+        video1.currentTime = 0;
+        video1.play();
+    });
+
+    // Start with video1
+    showSlide(slide1, slide2, slide3);
+    video1.currentTime = 0;
+    video1.play();
 
     // Utility Functions
     function isValidEmail(email) {
@@ -226,23 +193,5 @@ document.addEventListener('DOMContentLoaded', function() {
             notification.classList.remove('show');
             setTimeout(() => notification.remove(), 300);
         }, 3000);
-    }
-
-    const video1 = document.getElementById('hero-video-1');
-    const video2 = document.getElementById('hero-video-2');
-    const slide1 = document.getElementById('slide-1');
-    const slide2 = document.getElementById('slide-2');
-
-    if (video1 && video2 && slide1 && slide2) {
-        // Preload the second video
-        video2.load();
-
-        video1.addEventListener('ended', function () {
-            slide1.style.display = 'none';
-            slide2.style.display = 'block';
-            // Play the second video instantly
-            video2.currentTime = 0;
-            video2.play();
-        });
     }
 }); 
