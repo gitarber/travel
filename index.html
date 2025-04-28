@@ -46,8 +46,11 @@
     <section class="hero">
         <div class="hero-slider">
             <div class="hero-slide active">
-                <video autoplay muted loop playsinline class="hero-video">
-                    <source src="assets/videos/hero1.mp4" type="video/mp4">
+                <div class="video-loading">Loading video...</div>
+                <video autoplay muted loop playsinline class="hero-video" onloadeddata="this.parentElement.querySelector('.video-loading').style.display='none'">
+                    <source src="/assets/videos/hero1.mp4" type="video/mp4">
+                    <source src="/assets/videos/hero1.webm" type="video/webm">
+                    Your browser does not support the video tag.
                 </video>
             </div>
         </div>
