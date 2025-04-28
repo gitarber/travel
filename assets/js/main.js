@@ -227,4 +227,17 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => notification.remove(), 300);
         }, 3000);
     }
+
+    const video1 = document.getElementById('hero-video-1');
+    const video2 = document.getElementById('hero-video-2');
+    const slide1 = document.getElementById('slide-1');
+    const slide2 = document.getElementById('slide-2');
+
+    if (video1 && video2 && slide1 && slide2) {
+        video1.addEventListener('ended', function () {
+            slide1.style.display = 'none';
+            slide2.style.display = 'block';
+            video2.play();
+        });
+    }
 }); 

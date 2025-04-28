@@ -235,11 +235,6 @@ body {
     opacity: 1;
 }
 
-.hero-slide.fade-out {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
 /* Video Container Styles */
 .video-container {
     width: 100%;
