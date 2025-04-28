@@ -234,9 +234,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const slide2 = document.getElementById('slide-2');
 
     if (video1 && video2 && slide1 && slide2) {
+        // Preload the second video
+        video2.load();
+
         video1.addEventListener('ended', function () {
             slide1.style.display = 'none';
             slide2.style.display = 'block';
+            // Play the second video instantly
+            video2.currentTime = 0;
             video2.play();
         });
     }
