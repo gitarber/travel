@@ -235,6 +235,27 @@ body {
     opacity: 1;
 }
 
+.hero-slide.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Video Container Styles */
+.hero-slide > div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hero-slide iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -297,11 +318,21 @@ body {
     }
 }
 
-/* Responsive styles for hero section */
+/* Mobile Responsive Styles */
 @media (max-width: 768px) {
     .hero {
-        height: 100vh; /* Full viewport height */
-        min-height: 700px; /* Minimum height to ensure content fits */
+        height: 100vh; /* Full viewport height on mobile */
+        min-height: 100vh;
+        max-height: 100vh;
+    }
+
+    .hero-slide > div {
+        padding: 0 !important; /* Override the padding on mobile */
+        height: 100vh;
+    }
+
+    .hero-slide iframe {
+        height: 100vh;
     }
 
     .hero-content {
