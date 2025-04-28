@@ -45,14 +45,18 @@
 
     <section class="hero">
         <div class="hero-slider">
-            <div class="hero-slide active" data-video-id="1079368046">
-                <div style="padding:56.25% 0 0 0;position:relative;">
-                    <iframe src="https://player.vimeo.com/video/1079368046?badge=0&autopause=0&player_id=0&app_id=58479&muted=1&autoplay=1&controls=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="hero1"></iframe>
+            <div class="hero-slide active">
+                <div class="video-container">
+                    <video id="hero-video-1" autoplay muted loop playsinline>
+                        <source src="assets/videos/hero1.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
-            <div class="hero-slide" data-video-id="1079366016">
-                <div style="padding:56.25% 0 0 0;position:relative;">
-                    <iframe src="https://player.vimeo.com/video/1079366016?h=15559204&muted=1&autoplay=0&controls=0&background=1" frameborder="0" allow="autoplay; fullscreen" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="15559204-uhd_3840_2160_30fps"></iframe>
+            <div class="hero-slide">
+                <div class="video-container">
+                    <video id="hero-video-2" muted loop playsinline>
+                        <source src="assets/videos/hero2.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </div>

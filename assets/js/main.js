@@ -129,41 +129,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Video Slider Functionality
     const slides = document.querySelectorAll('.hero-slide');
-    const players = {};
+    const videos = [
+        document.getElementById('hero-video-1'),
+        document.getElementById('hero-video-2')
+    ];
     let currentSlide = 0;
     let isTransitioning = false;
     const slideDuration = 5000; // 5 seconds per slide
 
     console.log('Initializing video slider...');
 
-    // Initialize all videos
-    slides.forEach((slide, index) => {
-        const videoId = slide.dataset.videoId;
-        const iframe = slide.querySelector('iframe');
-        
-        if (iframe) {
-            players[index] = new Vimeo.Player(iframe);
-            
-            // Set up video
-            players[index].on('loaded', function() {
+    // Initialize videos
+    videos.forEach((video, index) => {
+        if (video) {
+            video.addEventListener('loadedmetadata', function() {
                 console.log(`Video ${index + 1} loaded`);
-                players[index].setCurrentTime(0);
+                video.currentTime = 0;
                 if (index === 0) {
                     console.log('Starting first video');
-                    players[index].play();
+                    video.play();
                 }
             });
 
-            // Add timeupdate event to track video progress
-            players[index].on('timeupdate', function(data) {
-                if (data.seconds >= 5 && !isTransitioning) {
+            video.addEventListener('timeupdate', function() {
+                if (video.currentTime >= 5 && !isTransitioning) {
                     console.log(`Video ${index + 1} reached 5 seconds`);
                     nextSlide();
                 }
             });
 
-            // Add error handling
-            players[index].on('error', function(error) {
+            video.addEventListener('error', function(error) {
                 console.error(`Error with video ${index + 1}:`, error);
             });
         }
@@ -186,15 +181,16 @@ document.addEventListener('DOMContentLoaded', function() {
         slides[currentSlide].classList.add('fade-out');
         
         // Stop current video
-        players[currentSlide].pause();
+        videos[currentSlide].pause();
+        videos[currentSlide].currentTime = 0;
         
         // Fade in next slide
         slides[nextIndex].classList.add('active');
         slides[nextIndex].classList.remove('fade-out');
         
         // Play next video
-        players[nextIndex].setCurrentTime(0);
-        players[nextIndex].play().then(() => {
+        videos[nextIndex].currentTime = 0;
+        videos[nextIndex].play().then(() => {
             console.log(`Video ${nextIndex + 1} started playing`);
             currentSlide = nextIndex;
             isTransitioning = false;
@@ -205,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Start the carousel after first video is loaded
-    players[0].on('play', function() {
+    videos[0].addEventListener('play', function() {
         console.log('First video started playing, setting up transition');
     });
 
