@@ -127,6 +127,88 @@ document.addEventListener('DOMContentLoaded', function() {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
+    // Video Slider Functionality
+    const slides = document.querySelectorAll('.hero-slide');
+    const players = {};
+    let currentSlide = 0;
+    let isTransitioning = false;
+    const slideDuration = 5000; // 5 seconds per slide
+
+    console.log('Initializing video slider...');
+
+    // Initialize all videos
+    slides.forEach((slide, index) => {
+        const videoId = slide.dataset.videoId;
+        const iframe = slide.querySelector('iframe');
+        
+        if (iframe) {
+            players[index] = new Vimeo.Player(iframe);
+            
+            // Set up video
+            players[index].on('loaded', function() {
+                console.log(`Video ${index + 1} loaded`);
+                players[index].setCurrentTime(0);
+                if (index === 0) {
+                    console.log('Starting first video');
+                    players[index].play();
+                }
+            });
+
+            // Add timeupdate event to track video progress
+            players[index].on('timeupdate', function(data) {
+                if (data.seconds >= 5 && !isTransitioning) {
+                    console.log(`Video ${index + 1} reached 5 seconds`);
+                    nextSlide();
+                }
+            });
+
+            // Add error handling
+            players[index].on('error', function(error) {
+                console.error(`Error with video ${index + 1}:`, error);
+            });
+        }
+    });
+
+    // Function to transition to next slide
+    function nextSlide() {
+        if (isTransitioning) {
+            console.log('Transition already in progress');
+            return;
+        }
+        isTransitioning = true;
+        console.log(`Transitioning from slide ${currentSlide + 1}`);
+
+        const nextIndex = (currentSlide + 1) % slides.length;
+        console.log(`Transitioning to slide ${nextIndex + 1}`);
+        
+        // Fade out current slide
+        slides[currentSlide].classList.remove('active');
+        slides[currentSlide].classList.add('fade-out');
+        
+        // Stop current video
+        players[currentSlide].pause();
+        
+        // Fade in next slide
+        slides[nextIndex].classList.add('active');
+        slides[nextIndex].classList.remove('fade-out');
+        
+        // Play next video
+        players[nextIndex].setCurrentTime(0);
+        players[nextIndex].play().then(() => {
+            console.log(`Video ${nextIndex + 1} started playing`);
+            currentSlide = nextIndex;
+            isTransitioning = false;
+        }).catch(error => {
+            console.error('Error playing video:', error);
+            isTransitioning = false;
+        });
+    }
+
+    // Start the carousel after first video is loaded
+    players[0].on('play', function() {
+        console.log('First video started playing, setting up transition');
+    });
+
     // Utility Functions
     function isValidEmail(email) {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
