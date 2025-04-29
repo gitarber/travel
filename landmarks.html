@@ -82,8 +82,8 @@
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
             .landmarks-hero {
-                height: 60vh;                /* Adjust mobile height */
-                min-height: 500px;           /* Adjust mobile min-height */
+                height: 100vh;                /* Increased from 60vh to 100vh for taller hero */
+                min-height: 600px;          /* Increased from 500px to 800px for taller hero */
                 margin-top: -60px;           /* Adjust mobile margin */
                 padding-top: 80px;           /* Adjust mobile padding */
             }
@@ -103,6 +103,87 @@
                 line-height: 1.3;
             }
         }
+
+        /* Updated mobile styles - ADJUST THESE VALUES to match regions page */
+        @media (max-width: 768px) {
+            /* REMOVED HERO STYLES THAT WERE OVERRIDING THE PREVIOUS MEDIA QUERY */
+            
+            /* Only keep the other mobile styles that don't affect the hero section */
+            .search-section {
+                padding: 2rem 0;
+            }
+
+            .search-container {
+                padding: 0 1rem;
+            }
+
+            .filters-container {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+
+            .filters-container::-webkit-scrollbar {
+                display: none;
+            }
+
+            .filters {
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                padding: 0.5rem 1rem;
+                width: max-content;
+                gap: 0.75rem;
+            }
+
+            .filter-btn {
+                flex: 0 0 auto;
+                width: auto !important;
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+                white-space: nowrap;
+            }
+
+            .filter-btn:first-child {
+                margin-left: 0;
+            }
+
+            .filter-btn:last-child {
+                margin-right: 1rem;
+            }
+
+            .scroll-indicator {
+                margin: 0.75rem 0 0;
+                padding: 0 1rem;
+                font-size: 0.75rem;
+            }
+
+            .landmarks-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+        }
+
+        /* DEVELOPER NOTE: IMPORTANT SIZING FIX
+         * --------------------------------------
+         * The landmarks-hero section appears smaller on mobile compared to regions.html
+         * To make both pages consistent, adjust the following values:
+         * 
+         * 1. Try increasing the height value (currently 60vh)
+         *    - For taller hero: try 70vh or 80vh
+         * 
+         * 2. Or increase min-height (currently 500px)
+         *    - For taller hero: try 550px or 600px
+         *
+         * 3. Fine-tune the hero-content transform:translateY() value
+         *    - Currently at 25%, may need adjustment to match regions page
+         *
+         * Compare with regions.html and destinations-hero class in destinations.css
+         * to achieve visual consistency across pages.
+         */
 
         .search-section {
             background-color: var(--white);
@@ -366,87 +447,6 @@
             background: var(--accent-color);
             color: var(--white);
             border-color: var(--accent-color);
-        }
-
-        @media (max-width: 768px) {
-            .landmarks-hero {
-                height: 60vh;
-                min-height: 500px;
-                margin-top: -60px;
-                padding-top: 80px;
-            }
-
-            .landmarks-hero .hero-content {
-                transform: translateY(15%);
-                padding: 0 1rem;
-            }
-
-            .landmarks-hero .hero-content h1 {
-                font-size: 2.5rem;
-                margin-bottom: 1rem;
-            }
-
-            .landmarks-hero .hero-content p {
-                font-size: 2rem;
-                line-height: 1.3;
-            }
-
-            .search-section {
-                padding: 2rem 0;
-            }
-
-            .search-container {
-                padding: 0 1rem;
-            }
-
-            .filters-container {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-                -ms-overflow-style: none;
-            }
-
-            .filters-container::-webkit-scrollbar {
-                display: none;
-            }
-
-            .filters {
-                flex-wrap: nowrap;
-                justify-content: flex-start;
-                padding: 0.5rem 1rem;
-                width: max-content;
-                gap: 0.75rem;
-            }
-
-            .filter-btn {
-                flex: 0 0 auto;
-                width: auto !important;
-                padding: 0.6rem 1rem;
-                font-size: 0.85rem;
-                white-space: nowrap;
-            }
-
-            .filter-btn:first-child {
-                margin-left: 0;
-            }
-
-            .filter-btn:last-child {
-                margin-right: 1rem;
-            }
-
-            .scroll-indicator {
-                margin: 0.75rem 0 0;
-                padding: 0 1rem;
-                font-size: 0.75rem;
-            }
-
-            .landmarks-grid {
-                grid-template-columns: 1fr;
-                padding: 1rem;
-            }
         }
     </style>
 </head>
