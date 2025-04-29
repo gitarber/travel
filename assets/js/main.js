@@ -11,11 +11,16 @@ document.addEventListener('DOMContentLoaded', function() {
     body.appendChild(overlay);
 
     function toggleMobileMenu() {
+        mobileMenuBtn.classList.toggle('active');
         navLinks.classList.toggle('mobile-active');
+        
+        // Add a small delay to allow the initial class to be applied
         setTimeout(() => {
             navLinks.classList.toggle('show');
             overlay.classList.toggle('show');
         }, 50);
+        
+        // Prevent body scrolling when menu is open
         body.style.overflow = body.style.overflow === 'hidden' ? '' : 'hidden';
     }
 
@@ -24,6 +29,15 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target === overlay) {
             toggleMobileMenu();
         }
+    });
+
+    // Close mobile menu when clicking on a nav link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinks.classList.contains('mobile-active')) {
+                toggleMobileMenu();
+            }
+        });
     });
 
     // Smooth Scrolling for Navigation Links
