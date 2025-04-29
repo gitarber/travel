@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const galleryStack = document.querySelector('.gallery-stack');
     const stackItems = Array.from(document.querySelectorAll('.stack-item'));
+    const touchIndicator = document.querySelector('.touch-indicator');
+    const touchText = document.querySelector('.touch-text');
     let isAnimating = false;
+    let interactionOccurred = false;
     
     // Card positions and rotations
     const cardStates = [
@@ -42,6 +45,23 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Make only the top card interactive
         updateInteractivity();
+        
+        // Show touch indicator and text after a short delay
+        setTimeout(showTouchElements, 1000);
+    }
+    
+    // Show touch indicator and text
+    function showTouchElements() {
+        if (!interactionOccurred) {
+            touchIndicator.style.opacity = "1";
+            touchText.style.opacity = "1";
+        }
+    }
+    
+    // Hide touch indicator and text
+    function hideTouchElements() {
+        touchIndicator.style.opacity = "0";
+        touchText.style.opacity = "0";
     }
     
     // Update which card is interactive
@@ -68,6 +88,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // If animation is in progress, don't allow another interaction
         if (isAnimating) return;
+        
+        // Mark that user has interacted with the gallery
+        interactionOccurred = true;
+        
+        // Hide touch indicator and text
+        hideTouchElements();
         
         // Get the card that was clicked/tapped
         const card = e.currentTarget;
@@ -118,6 +144,14 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Allow new interactions
             isAnimating = false;
+            
+            // Show touch elements briefly after each interaction (after a delay)
+            if (!isAnimating) {
+                setTimeout(showTouchElements, 2000);
+                
+                // Hide them again after a few seconds
+                setTimeout(hideTouchElements, 5000);
+            }
         }, 450); // Match the CSS animation duration
     }
     
