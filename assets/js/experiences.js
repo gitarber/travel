@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
         { x: '-200%', y: '100%', rotation: -30 },  // Left-down
         { x: '300%', y: '30%', rotation: 20 },     // Far right
         { x: '-300%', y: '30%', rotation: -20 },   // Far left
-        { x: '0', y: '-250%', rotation: 10 },      // Straight up
-        { x: '0', y: '250%', rotation: -10 }       // Straight down
+        { x: '50%', y: '-250%', rotation: 10 },    // Mostly up
+        { x: '50%', y: '250%', rotation: -10 }     // Mostly down
     ];
     
     // Initialize the stack
@@ -30,9 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
         stackItems.forEach((item, index) => {
             const state = cardStates[index];
             
-            // Apply initial styles directly
-            item.style.transform = `rotate(${state.rotation}deg) translateY(${state.translate}px)`;
+            // Apply styles without scale changes
+            item.style.transform = `rotate(${state.rotation}deg) translateY(${state.translate}px) translateZ(0)`;
             item.style.zIndex = state.zIndex;
+            item.style.willChange = "transform";
             
             // Also set the CSS variables for animations
             item.style.setProperty('--current-rotation', `${state.rotation}deg`);
@@ -103,8 +104,8 @@ document.addEventListener('DOMContentLoaded', function() {
             stackItems.forEach((item, index) => {
                 const state = cardStates[index];
                 
-                // Apply new styles directly
-                item.style.transform = `rotate(${state.rotation}deg) translateY(${state.translate}px)`;
+                // Apply styles without scale changes
+                item.style.transform = `rotate(${state.rotation}deg) translateY(${state.translate}px) translateZ(0)`;
                 item.style.zIndex = state.zIndex;
                 
                 // Update CSS variables
@@ -117,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Allow new interactions
             isAnimating = false;
-        }, 300); // Match the CSS animation duration
+        }, 450); // Match the CSS animation duration
     }
     
     // Update the stack array after DOM changes

@@ -337,25 +337,28 @@
 }
 
 /* Interaction styling */
+.stack-item:first-child {
+    transition: transform 0.15s ease;
+}
+
 .stack-item:first-child:hover {
-    transform: scale(1.02) rotate(calc(var(--current-rotation) - 2deg)) !important;
+    transform: scale(1.01) rotate(calc(var(--current-rotation))) !important;
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-    transition: all 0.2s ease;
 }
 
 .stack-item:first-child:active {
-    transform: scale(0.98) rotate(calc(var(--current-rotation) + 2deg)) !important;
-    transition: all 0.1s ease;
+    transform: scale(1) rotate(var(--current-rotation)) !important;
+    transition: transform 0.05s ease;
 }
 
 /* Animation Classes */
 .stack-item.slide-out {
-    animation: slideOut 0.3s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    animation: slideOut 0.45s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
     pointer-events: none !important;
 }
 
 .stack-item.slide-in {
-    animation: slideIn 0.3s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    animation: slideIn 0.45s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
     pointer-events: none !important;
 }
 
@@ -365,17 +368,23 @@
         transform: rotate(var(--current-rotation)) translateY(var(--current-translate));
         opacity: 1;
     }
-    20% {
-        transform: scale(1.05) rotate(calc(var(--current-rotation) + var(--exit-rotation) * 0.2)) 
-                  translateX(calc(var(--exit-x) * 0.1)) 
-                  translateY(calc(var(--exit-y) * 0.1));
+    15% {
+        transform: rotate(calc(var(--current-rotation) + var(--exit-rotation) * 0.1)) 
+                  translateX(calc(var(--exit-x) * 0.15)) 
+                  translateY(calc(var(--exit-y) * 0.15));
+        opacity: 1;
+    }
+    50% {
+        transform: rotate(calc(var(--current-rotation) + var(--exit-rotation) * 0.5)) 
+                  translateX(calc(var(--exit-x) * 0.5)) 
+                  translateY(calc(var(--exit-y) * 0.5));
         opacity: 1;
     }
     90% {
-        opacity: 1;
+        opacity: 0.8;
     }
     100% {
-        transform: scale(1) rotate(calc(var(--current-rotation) + var(--exit-rotation))) 
+        transform: rotate(calc(var(--current-rotation) + var(--exit-rotation))) 
                   translateX(var(--exit-x)) 
                   translateY(var(--exit-y));
         opacity: 0;
@@ -385,9 +394,9 @@
 
 @keyframes slideIn {
     0% {
-        transform: translateX(calc(-1 * var(--exit-x))) 
-                  translateY(calc(-1 * var(--exit-y)))
-                  rotate(calc(var(--current-rotation) - 45deg));
+        transform: translateX(calc(-1 * var(--exit-x) * 0.3)) 
+                  translateY(calc(-1 * var(--exit-y) * 0.3))
+                  rotate(calc(var(--current-rotation) - 10deg));
         opacity: 0;
     }
     20% {
