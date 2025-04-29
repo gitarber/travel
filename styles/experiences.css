@@ -336,15 +336,27 @@
     opacity: 0.9;
 }
 
+/* Interaction styling */
+.stack-item:first-child:hover {
+    transform: scale(1.02) rotate(calc(var(--current-rotation) - 2deg)) !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+}
+
+.stack-item:first-child:active {
+    transform: scale(0.98) rotate(calc(var(--current-rotation) + 2deg)) !important;
+    transition: all 0.1s ease;
+}
+
 /* Animation Classes */
 .stack-item.slide-out {
-    animation: slideOut 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    pointer-events: none;
+    animation: slideOut 0.3s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    pointer-events: none !important;
 }
 
 .stack-item.slide-in {
-    animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    pointer-events: none;
+    animation: slideIn 0.3s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    pointer-events: none !important;
 }
 
 /* Different exit directions */
@@ -353,23 +365,36 @@
         transform: rotate(var(--current-rotation)) translateY(var(--current-translate));
         opacity: 1;
     }
+    20% {
+        transform: scale(1.05) rotate(calc(var(--current-rotation) + var(--exit-rotation) * 0.2)) 
+                  translateX(calc(var(--exit-x) * 0.1)) 
+                  translateY(calc(var(--exit-y) * 0.1));
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
     100% {
-        transform: rotate(calc(var(--current-rotation) + var(--exit-rotation))) 
+        transform: scale(1) rotate(calc(var(--current-rotation) + var(--exit-rotation))) 
                   translateX(var(--exit-x)) 
                   translateY(var(--exit-y));
         opacity: 0;
+        visibility: hidden;
     }
 }
 
 @keyframes slideIn {
     0% {
-        transform: rotate(calc(var(--next-rotation) - 45deg)) 
-                  translateX(calc(-1 * var(--exit-x))) 
-                  translateY(calc(-1 * var(--exit-y)));
+        transform: translateX(calc(-1 * var(--exit-x))) 
+                  translateY(calc(-1 * var(--exit-y)))
+                  rotate(calc(var(--current-rotation) - 45deg));
         opacity: 0;
     }
+    20% {
+        opacity: 1;
+    }
     100% {
-        transform: rotate(var(--next-rotation)) translateY(var(--next-translate));
+        transform: rotate(var(--current-rotation)) translateY(var(--current-translate));
         opacity: 1;
     }
 }
