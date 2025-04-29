@@ -16,6 +16,11 @@
     color: var(--white);
 }
 
+/* Make sure mobile menu button has blue bars on destinations/regions pages */
+.mobile-menu-btn span {
+    background-color: var(--primary-color) !important;
+}
+
 .destinations-hero .video-container {
     position: absolute;
     top: 0;
