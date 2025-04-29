@@ -282,7 +282,7 @@
 @media (max-width: 768px) {
     .destinations-hero {
         height: 100vh;
-        min-height: 800px;
+        min-height: 600px;
         margin-top: -60px;
         padding-top: 80px;
     }
@@ -290,6 +290,7 @@
     .destinations-hero .hero-content {
         transform: translateY(25%);
         padding: 0 1rem;
+        text-align: center;
     }
 
     .destinations-hero .hero-content h1 {
