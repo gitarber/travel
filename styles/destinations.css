@@ -1,8 +1,8 @@
 /* Destinations Hero Section */
 .destinations-hero {
     position: relative;
-    height: 111vh;
-    min-height: 800px;
+    height: 70vh; /* Reduced by 15% from 111vh */
+    min-height: 660px;
     width: 100%;
     overflow: hidden;
     background-image: url('../assets/images/destinations/hero.jpg');
