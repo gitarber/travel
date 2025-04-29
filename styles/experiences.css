@@ -1,0 +1,392 @@
+/* Experiences Hero Section */
+.experiences-hero {
+    position: relative;
+    height: 70vh;
+    min-height: 660px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: -80px;
+    padding-top: 120px;
+}
+
+.experiences-hero .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.experiences-hero .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.experiences-hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.experiences-hero .hero-content {
+    position: relative;
+    z-index: 3;
+    color: white;
+    text-align: center;
+    padding-top: 100px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.experiences-hero .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.experiences-hero .hero-content p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Main Experiences Content */
+.experiences-main {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+/* Experience Categories */
+.experience-category {
+    padding: 60px 0;
+}
+
+.experience-category:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.category-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.category-header p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Experience Grid */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.experience-item {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+}
+
+.experience-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.experience-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.experience-item:hover .experience-image img {
+    transform: scale(1.05);
+}
+
+.experience-content {
+    padding: 25px;
+}
+
+.experience-content h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.experience-content p {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.experience-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.experience-details li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.experience-details i {
+    color: var(--accent-color);
+    width: 20px;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .experiences-hero {
+        height: 100vh;
+        min-height: 600px;
+        margin-top: -60px;
+        padding-top: 80px;
+    }
+
+    .experiences-hero .hero-content {
+        padding-top: 150px;
+    }
+
+    .experiences-hero .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .experiences-hero .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .category-header h2 {
+        font-size: 2rem;
+    }
+
+    .category-header p {
+        font-size: 1.1rem;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-image {
+        height: 200px;
+    }
+}
+
+/* Animation for Experience Items */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.experience-item {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.experience-item:nth-child(1) { animation-delay: 0.1s; }
+.experience-item:nth-child(2) { animation-delay: 0.2s; }
+.experience-item:nth-child(3) { animation-delay: 0.3s; }
+.experience-item:nth-child(4) { animation-delay: 0.4s; }
+.experience-item:nth-child(5) { animation-delay: 0.5s; }
+.experience-item:nth-child(6) { animation-delay: 0.6s; }
+.experience-item:nth-child(7) { animation-delay: 0.7s; }
+.experience-item:nth-child(8) { animation-delay: 0.8s; }
+.experience-item:nth-child(9) { animation-delay: 0.9s; }
+
+/* Stacked Card Gallery */
+.stacked-gallery {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    height: 500px;
+}
+
+.gallery-stack {
+    position: relative;
+    height: 100%;
+    perspective: 1000px;
+}
+
+.stack-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transform-origin: center center;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    will-change: transform, opacity;
+    pointer-events: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+/* Individual card rotations and positions */
+.stack-item:nth-child(1) {
+    transform: rotate(-5deg) translateY(0);
+    z-index: 6;
+    pointer-events: auto;
+}
+
+.stack-item:nth-child(2) {
+    transform: rotate(8deg) translateY(20px);
+    z-index: 5;
+}
+
+.stack-item:nth-child(3) {
+    transform: rotate(-12deg) translateY(40px);
+    z-index: 4;
+}
+
+.stack-item:nth-child(4) {
+    transform: rotate(15deg) translateY(60px);
+    z-index: 3;
+}
+
+.stack-item:nth-child(5) {
+    transform: rotate(-8deg) translateY(80px);
+    z-index: 2;
+}
+
+.stack-item:nth-child(6) {
+    transform: rotate(5deg) translateY(100px);
+    z-index: 1;
+}
+
+.stack-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.stack-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stack-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stack-item.active .stack-overlay {
+    transform: translateY(0);
+}
+
+.stack-overlay h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.stack-overlay p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Animation Classes */
+.stack-item.slide-out {
+    animation: slideOut 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    pointer-events: none;
+}
+
+.stack-item.slide-in {
+    animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    pointer-events: none;
+}
+
+/* Different exit directions */
+@keyframes slideOut {
+    0% {
+        transform: rotate(var(--current-rotation)) translateY(var(--current-translate));
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(calc(var(--current-rotation) + var(--exit-rotation))) 
+                  translateX(var(--exit-x)) 
+                  translateY(var(--exit-y));
+        opacity: 0;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: rotate(calc(var(--next-rotation) - 45deg)) 
+                  translateX(calc(-1 * var(--exit-x))) 
+                  translateY(calc(-1 * var(--exit-y)));
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(var(--next-rotation)) translateY(var(--next-translate));
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-wrapper {
+        height: 400px;
+    }
+
+    .stack-overlay h3 {
+        font-size: 1.5rem;
+    }
+
+    .stack-overlay p {
+        font-size: 1rem;
+    }
+}
+
+.gallery-item:nth-child(6) { animation-delay: 0.6s; } 
