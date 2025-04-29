@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function preloadVideos() {
         videos.forEach(video => {
             video.load();
+            video.preload = 'auto';
             video.addEventListener('loadeddata', () => {
                 console.log(`Video ${video.id} loaded successfully`);
             });
@@ -51,6 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
     preloadVideos();
     handleVideoPlayback();
     
-    // Change slide every 5 seconds (increased from 4 to 5 for smoother transitions)
+    // Change slide every 5 seconds
     setInterval(nextSlide, 5000);
 }); 
